@@ -1,0 +1,122 @@
+.tool-fixed-cta
+	.tool-cta-share
+		@apply fixed z-50 right-3
+		bottom: 10vh
+		// Tạo vùng hover mở rộng để giữ trạng thái
+		&::before
+			content: ''
+			@apply absolute
+			top: -6.25rem
+			left: -5rem
+			right: -1.25rem
+			bottom: -5rem
+			z-index: 0
+			@apply pointer-events-none
+		// Nút Share chính
+		> a
+			@apply sq-15 inline-flex items-center justify-center
+			@apply rounded-full transition-all duration-300
+			@apply shadow-lg hover:shadow-xl
+			background: #E31E24
+			@apply relative z-10
+			i
+				@apply text-white rem:text-[32px]
+		// Các nút con bên trong
+		.tool-cta-item
+			@apply absolute
+			right: 0
+			bottom: 0
+			opacity: 0
+			pointer-events: none
+			transform: translate(0, 0) scale(0)
+			transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+			z-index: 5
+			a
+				@apply sq-10 inline-flex items-center justify-center
+				@apply rounded-full transition-all duration-300
+				@apply shadow-lg hover:shadow-xl
+				background: #E31E24
+				i
+					@apply text-white rem:text-[24px]
+			&:hover a
+				transform: scale(1.1)
+		// Khi hover vào tool-cta-share (bao gồm cả các nút con), hiện các nút con
+		&:hover
+			&::before
+				@apply pointer-events-auto
+			> a
+				transform: rotate(360deg) scale(1.1)
+			.tool-cta-item
+				opacity: 1
+				pointer-events: auto
+				// Nút 1 - Phone (trên cùng)
+				&:nth-child(2)
+					transform: translate(-0.625rem, -5rem) scale(1)
+				// Nút 2 - WhatsApp (trên - lệch trái)
+				&:nth-child(3)
+					transform: translate(-4.25rem, -2.5rem) scale(1)
+				// Nút 3 - WhatsApp (dưới - lệch trái)
+				&:nth-child(4)
+					transform: translate(-4.25rem, 1rem) scale(1)
+				// Nút 4 - Messenger (dưới cùng)
+				&:nth-child(5)
+					transform: translate(-0.625rem, 3.75rem) scale(1)
+	.btn
+		&.button-to-top
+			@apply fixed z-50
+			right: 2rem
+			bottom: calc(10vh - 18.125rem)
+			box-shadow: 0 0.25rem 2.5rem 0 rgba(0, 0, 0, 0.04)
+			@apply bg-white sq-10 rounded-full
+			transition: all 0.3s ease
+			&:hover
+				transform: scale(1.1)
+			.btn-icon
+				@apply w-full h-full flex items-center justify-center
+			.icon
+				animation: none !important
+				@apply sq-10  flex-center
+				@apply relative overflow-hidden
+				padding: 0.5rem
+				&:hover
+					&::after
+						@apply translate-y-0 opacity-100
+					&::before
+						@apply translate-y-[-100%]
+				&::after
+					@apply translate-y-[100%] opacity-0
+				&::before,&::after
+					content: '\f062'
+					@apply font-awesome text-lg  font-light transition-300 absolute text-Primary-1
+	.btn
+		transform: translateX(calc(100% - 2.7083333333rem))
+		@apply h-12 flex rounded-r-none
+		@apply w-fit transition-300
+		&.btn-social
+			@apply bg-Primary-1
+			.content
+				ul
+					@apply gap-2
+					li
+						img
+							@apply max-w-none #{!important}
+						a
+							@apply sq-8 inline-flex items-center justify-center
+							i
+								@apply font-normal
+		&:hover
+			transform: translateX(0)
+		.btn-icon
+			@apply h-full flex-center rem:w-[52px]
+			.icon
+				animation: ring 1s ease-in-out infinite both
+				@apply text-Utility-white
+				i
+					@apply font-light
+		.content
+			@apply h-full flex items-center
+			@apply pr-3 font-semibold text-white py-2 whitespace-nowrap
+			ul
+				@apply flex items-center gap-2 h-full
+				@apply border-l border-white/40 pl-2
+				

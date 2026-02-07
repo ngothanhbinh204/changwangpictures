@@ -1,0 +1,22 @@
+section.sectionn-parter(class="section-py")
+    .container-fluid
+        .wrap-heading(class="rem:max-w-[1000px] w-full text-center mb-base mx-auto")
+            h2.title(class="heading-1 text-Primary-1 font-bold mb-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000") Khách hàng - Đối tác
+            .desc(class="body-1 font-normal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000")
+                p BITAHACO hân hạnh đồng hành, cung cấp dịch vụ thương mại cho các đơn vị hàng đầu Việt Nam và thế giới.
+        .slide-top
+            .swiper 
+                .swiper-wrapper
+                    -for(i=0;i<30;i++)
+                        .swiper-slide
+                            .item-logo(data-aos="flip-up" data-aos-duration="1000" data-aos-delay= `${i * 100}`)
+                                .img(class="img-ratio")
+                                    +PugImg('./img/partner.png')
+        .slide-bottom 
+            .swiper 
+                .swiper-wrapper
+                    -for(i=0;i<30;i++)
+                        .swiper-slide
+                            .item-logo(data-aos="flip-down" data-aos-duration="1000" data-aos-delay= `${i * 100}`)
+                                .img(class="img-ratio")
+                                    +PugImg('./img/partner.png')

@@ -1,0 +1,17 @@
+section.about-5(class="section-py" setbackground="./img/bg-about-5.png")
+	.container-fluid
+		.wrap-heading(class="text-center mb-base")
+			.sub-title(class="heading-4 font-semibold text-Utility-gray-500 mb-3") CERTIFICATES & ACHIEVEMENTS
+			h2.title(class="heading-1 ") Comprehensive mineral solutions for all industries
+		.big-wrapper
+			.relative(class="mt-10")
+				.ratio-wrapper(class="lg:img-ratio lg:ratio:pt-[535_1720]")
+					.ratio-inner(class="lg:absolute inset-0 w-full h-full")
+						.wrapper(class="lg:overflow-hidden h-full flex items-center")
+							.swiper
+								.swiper-wrapper
+									-for(i=0;i<10;i++)
+										.dynamic-slide.swiper-slide
+											.img(class="transition-all duration-500")
+												a(href="./img/1.jpg" data-fancybox="gallery" class="img-ratio ratio:pt-[364_264] zoom-img") 
+													+PugImg()

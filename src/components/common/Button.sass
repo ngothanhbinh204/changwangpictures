@@ -1,0 +1,55 @@
+.btn
+	@apply cursor-pointer select-none transition-all duration-300
+	&.loading
+		@apply bg-transparent #{!important}
+		span,.icon
+			@apply opacity-0
+		&::before
+			content: ''
+			animation-duration: 0.5s
+			@apply w-5 h-5 border-3 border-white/40 border-t-white rounded-full inline-block
+			@apply absolute animate-spin
+	&.btn-sw-1
+		@apply sq-10 py-2 px-5  flex-center bg-white
+		&::before
+			@apply font-awesome text-Primary-1 font-light body-2
+		&.btn-prev
+			&::before
+				content: '\f177'
+		&.btn-next
+			&::before
+				content: '\f178'
+				@apply font-awesome
+		&.gray
+			@apply bg-Utility-gray-50
+		&:hover
+			@apply bg-Primary-2
+			&::before
+				@apply text-Utility-white
+		
+	&.btn-primary
+		@apply rem:h-[46px] inline-flex items-center justify-center px-6 bg-Utility-white gap-4
+		@apply border border-Primary-1
+		&:hover
+			@apply text-white bg-Primary-2 border-transparent
+			span
+				@apply text-white
+			.icon
+				@apply w-15
+				svg
+					path
+						@apply fill-white
+						stroke-width: 0
+		span
+			@apply rem:text-[16px] font-semibold text-Primary-1 uppercase
+			@apply transition-all duration-300
+		.icon
+			@apply rem:w-[30px] flex items-center
+			@apply transition-all duration-300
+			svg
+				@apply w-full h-full
+				@apply transition-all duration-300
+				path
+					stroke-width: 0
+					vector-effect: non-scaling-stroke
+

@@ -1,0 +1,101 @@
+section.product(class="section-py")
+	.container
+		.filter-product-mobile(class="lg:hidden sticky top-[calc(var(--header-height)+20px)] z-10")
+			.toggle-filter(class="flex items-center justify-between w-fit cursor-pointer")
+				.group-left(class="flex items-center gap-2 bg-Primary-1 p-2 text-Utility-white")
+					i.fa-light.fa-filter.subheader-24
+					.label Bộ lọc 
+		.wrapper(class="grid grid-cols-12 gap-base")
+			.col-left(class="lg:col-span-3 col-span-full flex flex-col gap-6")
+				.btn-close-filter-product-mobile
+					i.fa-light.fa-xmark
+				.category-product-heading
+					.wrap-title(class="flex items-center justify-between")
+						.title Thực phẩm tươi sống
+						.icon 
+							<i class="fa-light fa-angle-down"></i>
+					ul.menu-list.level-0 
+						li.term-item  
+							a(href="#") Hải sản
+							ul.sub-menu 
+								li
+									a(href="#") Thịt bò Úc 11
+								li
+									a(href="#") Thịt bò Úc 22
+								li
+									a(href="#") Thịt bò Úc 3
+						li.term-item  
+							a(href="#") Thịt nhập khẩu
+							ul.sub-menu 
+								li.term-item  
+									a(href="#") Thịt bò
+									ul.sub-menu 
+										li 
+											a(href="#") Thịt bò Mỹ
+										li 
+											a(href="#") Thịt bò Úc
+								li
+									a(href="#") Thịt cừu
+								li
+									a(href="#") Thịt gà
+								li
+									a(href="#") Thịt heo
+				.category-product-heading
+					.wrap-title(class="flex items-center justify-between")
+						.title Thực phẩm tươi sống
+						.icon 
+							<i class="fa-light fa-angle-down"></i>
+					ul.menu-list.level-0 
+						li  
+							a(href="#") Hải sản
+						li  
+							a(href="#") Hải sản
+						li  
+							a(href="#") Hải sản
+				.category-product-heading
+					.wrap-title(class="flex items-center justify-between")
+						.title Thực phẩm tươi sống
+						.icon 
+							<i class="fa-light fa-angle-down"></i>
+					ul.menu-list.level-0 
+						li  
+							a(href="#") Hải sản
+						li  
+							a(href="#") Hải sản
+						li  
+							a(href="#") Hải sản
+				.category-product-heading
+					.wrap-title(class="flex items-center justify-between")
+						.title Thực phẩm tươi sống
+						.icon 
+							<i class="fa-light fa-angle-down"></i>
+					ul.menu-list.level-0 
+						li  
+							a(href="#") Hải sản
+						li  
+							a(href="#") Hải sản
+						li  
+							a(href="#") Hải sản
+			.col-right(class="lg:col-span-9 col-span-full")
+				.heading(class="flex items-center justify-between mb-base flex-wrap")
+					h2(class="heading-title") Thịt bò Mỹ
+					.filters 
+						.select-view 
+							.select-view-item(class="relative ")
+								select#view(name="view") 
+									option(value="Sản phẩm bán chạy nhất") Sản phẩm bán chạy nhất
+									option(value="Sản phẩm yêu thích") Sản phẩm yêu thích
+									option(value="Sản phẩm từ cao tới thấp") Sản phẩm từ cao tới thấp
+									option(value="12") 48 
+				.product-list(class="grid md:grid-cols-3 gap-base")
+					-for(var i = 0; i < 9; i++)
+						+ProductItem()
+				.pagination(class="mt-base")
+					ul.page-numbers
+						li 
+							a.active(href="#") 1 
+						li 
+							a(href="#") 2
+						li 
+							a(href="#") 3
+.overlay

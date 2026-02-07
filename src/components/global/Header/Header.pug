@@ -1,0 +1,66 @@
+header.header 
+	.header-wrapper
+		.header-logo
+			a(href="./index.html")
+				+PugImg("./img/Logo.svg")
+		.header-right
+			.header-menu
+				ul.header-nav
+					li
+						a(href="./films.html") FILMS/CONCEPT
+					li
+						a(href="./work.html") WORK
+					li
+						a(href="./artistic.html") ARTISTIC
+					li
+						a(href="./about.html") ABOUT
+					li
+						a(href="./contact.html") CONTACT
+					li
+						a(href="./blogs.html") BLOGS
+			.header-socials
+				ul
+					li
+						a(href="#")
+							i.fa-brands.fa-instagram
+					li
+						a(href="#")
+							i.fa-brands.fa-facebook-f
+					li
+						a(href="mailto:contact@example.com")
+							i.fa-regular.fa-envelope
+			.header-bar.lg:hidden
+				i.fa-light.fa-bars
+	.nav-mobile
+		.header-wrap-head
+			.header-logo
+				a(href="./index.html")
+					+PugImg("./img/Logo.svg")
+			.header-close
+				i.fa-light.fa-xmark
+		.header-wrap-menu
+			ul.menu-mobile
+				li 
+					a(href="./films.html") FILMS/CONCEPT
+				li
+					a(href="./work.html") WORK
+				li
+					a(href="./artistic.html") ARTISTIC
+				li
+					a(href="./about.html") ABOUT
+				li
+					a(href="./contact.html") CONTACT
+				li
+					a(href="./blogs.html") BLOGS
+			.header-socials-mobile
+				ul
+					li
+						a(href="#")
+							i.fa-brands.fa-instagram
+					li
+						a(href="#")
+							i.fa-brands.fa-facebook-f
+					li
+						a(href="mailto:contact@example.com")
+							i.fa-regular.fa-envelope
+	.header-overlay

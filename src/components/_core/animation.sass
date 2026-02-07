@@ -1,0 +1,89 @@
+.zoom-img
+	overflow: hidden
+	&:hover
+		img
+			transform: scale(1.05) translateZ(0)
+	img
+		transition: .5s all ease-in-out !important
+.ring-food
+	animation: 1.5s ring-food infinite ease-in-out alternate
+.ring-chili
+	animation: 1.5s ring-chili infinite ease-in-out alternate
+.ring-food-footer
+	animation: 1.5s ring-food-footer infinite ease-in-out alternate
+.play-btn
+	@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-2
+	.icon
+		@apply transition-all top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-2
+		@apply absolute
+		@apply sq-10
+		@media (min-width: 768px)
+			@apply sq-15
+		@screen xl
+			@apply sq-20
+		a
+			@apply overflow-visible img-ratio
+		svg
+			@apply overflow-visible
+		rect
+			transform-origin: center
+			transform-box: fill-box
+			@apply transition-all
+			&:nth-of-type(1)
+				@apply relative z-2
+			&:nth-of-type(2)
+				animation: ping 1.3s ease-in-out infinite both
+			&:nth-of-type(3)
+				animation: ping 1.3s .3s ease-in-out infinite both
+@keyframes ring-chili
+	0%
+		transform: rotate(8deg)
+	100%
+		transform: rotate(-8deg)
+@keyframes ring-food-footer
+	0%
+		transform: rotate(4deg)
+	100%
+		transform: rotate(-4deg)
+@keyframes ring-food
+	0%
+		transform: rotate(300deg)
+	100%
+		transform: rotate(330deg)
+@keyframes fade-in-down
+	0%
+		opacity: 0
+		transform: translateY(-100px)
+	100%
+		opacity: 1
+		transform: none
+@keyframes ring
+	0%
+		transform: rotate(0deg)
+	20%
+		transform: rotate(45deg)
+	40%
+		transform: rotate(-15deg)
+	60%
+		transform: rotate(15deg)
+	70%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(0deg)
+@keyframes moveSwipeGesture
+	0%
+		transform: translateX(-8px)
+	50%
+		transform: translateX(8px)
+	100%
+		transform: translateX(-8px)
+@keyframes ping
+	0%
+		transform: scale(0.7)
+		opacity: 1
+	75%
+		transform: scale(1.05)
+		opacity: 0.75
+	100%
+		transform: scale(1.2)
+		opacity: 0

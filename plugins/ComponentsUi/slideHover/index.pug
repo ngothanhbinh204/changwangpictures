@@ -1,0 +1,20 @@
+section.section-field-op(class="py-10")
+    .container-fluid
+        .field-op
+            .wrap-heading(class="rem:max-w-[1000px] w-full mx-auto text-center mb-base")
+                h2.title(class="heading-1 text-Primary-1 font-bold mb-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000") Lĩnh vực hoạt động
+                .desc(class="body-1 font-normal" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000") 
+                    p Cung cấp các giải pháp  thương mại toàn diện - dịch vụ hỗ trợ kịp thời chất lượng cao, xây dựng môi trường  thương mại minh bạch chuyên nghiệp – thúc đẩy giao thương lành mạnh và hiệu  quả. 
+            .swiper.swiper-field-op(data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1000")
+                ul.swiper-wrapper.field-op-list
+                    -for(let i=0;i<4;i++)
+                        li.swiper-slide.field-op-item(class="relative xl:flex-1 rem:!h-[480px] overflow-hidden group transition-500")
+                            .thumb(class="img-full w-full h-full")
+                                +PugImg()
+                            .wrap-content-top(class="absolute top-0 left-0 p-8 w-full flex items-center justify-between gap-4")
+                                h3.title(class="heading-3 font-bold transition-all-500-linear text-white") Thương mại
+                                a(href="#" class="icon")  
+                            .info(class="absolute bottom-0 left-0 z-2 w-full p-7 text-white transition-all-500-linear")                                
+                                .content(class="body-1 mt-2.25 xl:opacity-0 xl:invisible transition-all-500-linear") 
+                                    p Một môi trường sinh thái cân bằng không chỉ mang lại không gian sống xanh, sạch mà còn bảo vệ sức khỏe con người và duy trì tài nguyên thiên nhiên bền vững. Yếu tố này chính là lá phổi giữ cho mọi nhịp sống được an hòa và khỏe mạnh.                
+

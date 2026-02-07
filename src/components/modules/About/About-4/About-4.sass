@@ -1,0 +1,40 @@
+.about-4
+	background: rgba(0, 140, 255, 0.05)
+	@apply rem:py-[100px]
+	.wrap-list
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+		.item
+			@apply flex rem:gap-[24px] items-start transition-all duration-300
+			.content-left
+				@apply relative flex flex-shrink-0 h-full
+				.number
+					color: rgba(0, 80, 146, 0.50)
+					@apply rem:text-[68px] font-bold
+				.line
+					background: linear-gradient(90deg, rgba(0, 80, 146, 0.00) 0%, rgba(0, 80, 146, 0.50) 16.26%, rgba(0, 80, 146, 0.39) 60.11%, rgba(0, 80, 146, 0.00) 100%)
+					@apply absolute rem:top-[50%] right-[-5.8rem] rem:w-[222px] h-[1px]
+					transform: rotate(-76deg) translateY(-50%)
+			.content-right
+				@apply flex flex-col rem:gap-[20px]
+				.icon
+					@apply sq-16 inline-flex items-center justify-center transition-all duration-300
+					img,svg
+						@apply w-full h-full object-contain
+				.content-right-bottom
+					.title
+						color: #005092
+						@apply rem:text-[32px] rem:leading-[1.2] font-bold mb-1 transition-all duration-300
+					.desc
+						@apply body-1 font-secondary font-normal
+			&:hover
+				.content-left
+					.number
+						color: rgba(231, 30, 37, 0.50)
+				.content-right
+					.icon
+						svg
+							path
+								fill: #E71E25
+					.content-right-bottom
+						.title
+							@apply text-Primary-2

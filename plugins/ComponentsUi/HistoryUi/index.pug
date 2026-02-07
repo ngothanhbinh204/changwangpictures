@@ -1,0 +1,44 @@
+section.about-4(class="section-py !pb-0")
+	.wrapper
+		.container
+			.heading(class="mb-base")
+				.wrap-title 
+					.title Lịch sử hình thành
+					h2(class="heading-48") Kết nối nguồn lực, phát triển hạ tầng.
+			.thumb(class="mb-base")
+				.wrap-slide-years
+					.relative
+						.swiper.history-swiper
+							.swiper-wrapper
+								-for(i=0;i<10;i++)
+									.swiper-slide
+										.item-history(class="flex flex-col items-center gap-8")
+											.wrap
+												.line-year
+													.circle(class="rem:w-[32px] rem:h-[32px] rounded-full border border-transparent")
+														.dot
+											.content(class="")
+												.number 2001 – 2005
+			.main(class="relative mt-base")
+				.swiper
+					.swiper-wrapper 
+						-for(var i = 0; i < 10; i++)
+							.swiper-slide 							
+								.box(class="p-6 shadow-Shadow-1 border border-Utility-gray-50 bg-white")
+									.item(class="grid lg:grid-cols-2 xl:gap-12 gap-base")
+										.col-left
+											.img 
+												a(href="#" class="img-ratio ratio:pt-[366_652]")
+													+PugImg() 
+										.col-right
+											.format-content(class="body-18 font-secondary text-justify pr-6")
+												.year(class="rem:text-[36px] text-Primary-1 font-bold mb-6") 2001 – 2005
+												p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt fugiat aperiam illo dolor tempora consequatur, voluptate corrupti eius voluptates odit repellat assumenda a tempore, quia exercitationem consequuntur quam minima magnam.
+												p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut doloribus obcaecati placeat asperiores sit omnis tenetur dolorem magni, atque quam accusamus est dolores eveniet vel iure assumenda ipsam labore sed.
+												p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, enim? Excepturi, doloribus nam quo nisi, veniam asperiores fugit accusamus expedita sint id eum labore consequuntur officia ratione. Ipsum, quam odio.
+												ul 
+													li Ra mắt sản phẩm ăn liền tiện lợi Bún Gạo Lứt Ngon & Thon với 2 vị, tảo xoắn chua cay và	rau củ hạt ngũ cốc.
+													li Ra mắt sản phẩm ăn liền tiện lợi Bún Gạo Lứt Ngon & Thon với 2 vị, tảo xoắn chua cay và	rau củ hạt ngũ cốc.
+				.wrap-button-slide.drop
+					.btn.btn-prev.btn-sw-1
+					.btn.btn-next.btn-sw-1

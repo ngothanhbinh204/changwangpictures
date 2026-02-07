@@ -1,0 +1,48 @@
+form.invalid
+	.wpcf7-response-output
+		@apply text-red-600 border-red-600 bg-white #{!important}
+.wpcf7-response-output
+	@apply text-green-400 border-green-400 bg-white border py-1 px-4 text-center mt-2 mb-0 ml-0 mr-0  #{!important}
+.subscribe-form
+	form
+		.form-group
+			@apply relative items-center
+			@apply rem:h-[64px] 
+			@apply w-full pl-5 pr-2 inline-flex rounded-full 
+			input
+				@apply h-full rem:w-[480px] rounded-full
+				@screen -lg
+					@apply w-full
+				&::placeholder
+					@apply font-normal
+			.btn-submit
+				@apply rem:h-[48px] bg-[#1A3C3D] rounded-full px-4
+				@apply inline-flex gap-1 items-center justify-center text-white
+				span
+					@apply body-1 font-bold
+				.icon
+					@apply sq-6 inline-flex items-center justify-center text-xl
+// form
+// 	.wrap-form
+// 		@apply grid grid-cols-2 gap-6
+// 		.form-group
+// 			@apply relative
+// 			input
+// 				@apply h-12 px-5 inline-flex items-center justify-center border border-[#E0E0E0] rounded-6 text-[#333333] outline-0 #{!important}
+// 	&.submitting
+// 		.form-submit
+// 			button.btn-primary
+// 				span
+// 					@apply pointer-events-none 
+// 				.icon
+// 					@apply animate-spin
+// 					i
+// 						&::before							
+// 							content: "\f3f4"
+// 							@apply font-awesome text-white  text-2xl
+.wpcf7-not-valid-tip
+	@apply text-base text-red-600 inline-block my-2
+.frm-submit
+	@apply relative
+	.wpcf7-spinner
+		@apply absolute left-full top-1/2 -translate-y-1/2 ml-2

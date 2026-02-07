@@ -1,0 +1,99 @@
+body.tax-product_cat 
+	.page-banner-main
+		.content
+			.global-breadcrumb
+				@apply hidden
+.product
+	.wrapper
+		.col-left
+			.btn-close-filter-product-mobile
+				@apply lg:hidden block
+		.category-product-heading
+			@apply p-4 rounded-3 bg-Primary-1
+			.wrap-title
+				@apply cursor-pointer  border-b border-b-transparent transition-all ease-in-out		
+				.title
+					@apply font-bold
+				.icon
+					@apply heading-1 font-light
+				&.active
+					@apply border-b-Primary-2 mb-4 pb-5
+					.icon
+						i
+							@apply rotate-180 text-Primary-2
+					.title
+						@apply text-Primary-2
+			ul.menu-list
+				@apply hidden
+				>li
+					@apply cursor-pointer pb-4 mb-4 border-b border-b-Primary-2
+					.menu-item
+						@apply flex items-center justify-between
+						>a
+							@apply body-2
+						.icon-arrow
+							@apply heading-1
+							&.active
+								i
+									@apply rotate-180 text-Primary-2
+					&:hover
+						a
+							@apply text-Primary-2
+					>ul
+						@apply hidden bg-Utility-white p-4 rounded-b-3
+						>li
+							@apply mb-4 last:mb-0 border-b border-b-Primary-1 last:pb-0 pb-4 last:border-none
+							a
+								@apply body-2 font-normal
+							>ul
+								@apply hidden p-4 bg-Primary-1 rounded-3
+								>li
+									@apply mb-4 last:mb-0
+		.col-right
+			.heading
+				@screen -xl
+					@apply my-10
+				.filters
+					.select-view
+						@apply rem:min-w-[289px] w-full
+						select
+							appearance: none
+							-webkit-appearance: none
+							-moz-appearance: none
+							background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='15' height='20' fill='none' viewBox='0 0 15 20'%3e%3cpath fill='%23292929' d='m14.14 8.469-6.21 5.625a.567.567 0 0 1-.82 0L.82 8.469a.581.581 0 0 1-.039-.86.581.581 0 0 1 .86-.039L7.5 12.805l5.82-5.235a.581.581 0 0 1 .86.04.581.581 0 0 1-.04.859Z'/%3e%3c/svg%3e")
+							background-repeat: no-repeat
+							background-position: center right 1rem
+							@apply rem:h-[46px] inline-flex px-5 w-full rounded-6 bg-Utility-gray-100
+@media (max-width: 1023.98px)
+	.product
+		.wrapper
+			@apply gap-[8px]
+			.col-right
+				@apply w-full
+			.col-left
+				max-width: 340px
+				transition-duration: .5s
+				transition-property: transform
+				transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1)
+				height: calc(100dvh - var(--header-height))
+				transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+				@apply overflow-y-auto p-[20px] flex flex-col gap-[20px] w-full fixed top-[var(--header-height)] left-0 z-[150] bg-Utility-white pointer-events-none -translate-x-full
+				&.active
+					@apply pointer-events-auto translate-x-0
+				.btn-close-filter-product-mobile
+					@apply sq-10 flex-shrink-0 inline-flex items-center justify-center bg-Primary-1 text-white  ml-auto rounded-1 text-2xl
+			.filter-product-mobile 
+				@apply top-0 static 
+.overlay
+	position: fixed
+	opacity: 0
+	transition: 0.3s all ease-in-out
+	pointer-events: none
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0, 0, 0, 0.5)
+	z-index: 50
+	&.active
+		@apply opacity-100

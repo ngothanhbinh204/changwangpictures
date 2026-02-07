@@ -1,0 +1,23 @@
+#form-contact-product(style="display: none;" data-fancybox-modal)
+	.popup-content(class="w-full relative z-50")
+		.heading(class="text-center mb-6")
+			h2(class="heading-4 text-Neutral-Black font-bold mb-4") Ba Chỉ Bò Mỹ 500G
+			.desc 
+				p Vui lòng điền thông tin vào form dưới đây để nhận tư vấn nhanh chóng. Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất để hỗ trợ giải đáp thắc mắc.
+		form.wpcf7-form(action="")
+			.wrap-form(class="grid md:grid-cols-2 gap-4 mb-5") 
+				.form-group
+					input(type="text" name="ho-va-ten" placeholder="Họ và tên")
+				.form-group
+					input(type="email" name="email" placeholder="Số điện thoại")
+				.form-group
+					input(type="tel" name="so-dien-thoai" placeholder="Email")
+				.form-group
+					input(type="text" name="noi-dung" placeholder="Tiêu đề")
+				.form-group.textarea(class="w-full") 
+					textarea(name="Noi dung") Nội dung
+				.form-submit
+					button(class="btn btn-primary")
+						span Gửi ngay
+						.icon
+							<i class="fa-solid fa-arrow-right"></i>

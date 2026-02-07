@@ -1,0 +1,27 @@
+#form-contact-product
+	@apply lg:rem:w-[800px] w-full  relative  xl:p-16 p-5 rounded-6
+	.carousel__button
+		position: absolute !important
+		top: 0.5rem !important
+		right: 0.5rem !important
+		@apply sq-10 z-100 cursor-pointer bg-Primary-1
+		svg
+			@apply rem:w-[16px] rem:h-[16px]
+	form.wpcf7-form.submitting
+		button
+			&[type="submit"]
+				@apply pointer-events-none cursor-not-allowed
+	.popup-content
+		@screen -xl
+			@apply p-4
+		form
+			.wrap-form
+				.form-group
+					&.textarea
+						@apply rem:max-h-[140px] h-full
+						textarea
+							@apply h-full
+				.form-submit
+					@apply col-span-full
+					.wpcf7-response-output
+						@apply hidden

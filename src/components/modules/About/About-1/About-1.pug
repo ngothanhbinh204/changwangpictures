@@ -1,0 +1,21 @@
+section.about-1(class="section-py bg-Utility-gray-50")
+	.container-fluid 
+		.wrap-heading(class="text-center mb-base")
+			.sub-title(class="heading-4 font-semibold text-Utility-gray-500 mb-3") FACILITIES
+			h2.title(class="heading-1 uppercase") FACILITIES
+		.swiper-column-auto(class="relative swiper-loop autoplay")
+			.swiper 
+				.swiper-wrapper
+					-for(var i = 0; i < 4; i++)
+						.swiper-slide
+							.facility-item
+								.img(class="img-ratio ratio:pt-[465_828]")
+									+PugImg()
+								.content(class="mt-6 text-center")
+									h3.title(class="heading-2 font-extrabold text-Primary-1 mb-4")
+										a(href="#") Factory  1
+									.desc(class="body-1 font-normal font-secondary") 
+										p Lot 20, Phu Thu Industrial Cluster, Nhi Chieu Ward, Hai Phong City, Viet Nam.
+			.wrap-button-slide
+				.btn.btn-sw-1.btn-prev
+				.btn.btn-sw-1.btn-next

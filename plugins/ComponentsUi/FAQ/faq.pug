@@ -1,0 +1,13 @@
+.section-faq
+	.container
+		.wrap-item-toggle(class='flex flex-col gap-3')
+			- for(var i = 0; i < 8; i++)
+				.item-toggle(class="group transition-300")
+					.title(class="flex items-center justify-between cursor-pointer transition-300")
+						.toggle-wrapper(class="flex items-center gap-5")
+							.number(class="body-1 font-bold text-Primary-1") 1
+							span(class="font-bold") Phòng học Edufin
+						i.fa-light.fa-chevron-down.text-xl.ml-auto(class="transition-300 text-Neutral-White")
+					.content(style="display: none;")
+						.desc(class="font-normal mt-5 lg:px-16 px-5")
+							p Không gian học tập được thiết kế khoa học, bao gồm nhiều phòng học chức năng như học nhóm, hội trường hay phòng học nghe, đặc biệt là Rạp chiếu phim EduFin cho phép học tiếng anh qua điện ảnh.

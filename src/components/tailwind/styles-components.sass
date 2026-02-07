@@ -1,0 +1,146 @@
+@layer components
+	.page-banner-main
+		@apply relative
+		&::before
+			content: ""
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 100%)
+			backdrop-filter: blur(2px)
+			@apply absolute bottom-0 left-0 w-full rem:h-[287px] pointer-events-none z-1
+		.content-banner
+			@apply absolute bottom-16 left-0 w-full text-white text-center z-2
+			.title
+				@apply xl:rem:text-[72px] rem:text-[48px] font-bold uppercase mb-4
+			.global-breadcrumb
+				@apply bg-transparent
+				p
+					@apply justify-center gap-4
+					a, span
+						@apply text-white/50
+					.last
+						@apply body-1 font-bold text-white
+	.indicator-swipe
+		@apply z-30 px-3 
+		@apply w-[calc(104/19.2*1rem)] h-14 rounded-full
+		@apply flex justify-between items-center
+		@apply transition-all pointer-events-none
+		&:not(.active)
+			@apply opacity-0
+		svg
+			@apply stroke-white
+		.hand
+			animation: moveSwipeGesture 2.25s infinite ease-in-out
+			@apply md:w-16 md:h-12 w-10 h-10
+	.nav-primary
+		@apply flex items-center justify-center gap-4 
+		@apply overflow-auto whitespace-nowrap
+		@screen -md
+			@apply justify-normal pb-3
+		li
+			a
+				@apply inline-flex items-center justify-center 
+				@apply rounded-5 px-4 h-10
+				@apply bg-white text-Primary-1 font-semibold uppercase
+			&.active, &:hover
+				a
+					@apply bg-Primary-1 text-white
+	.pagination
+		@apply flex items-center justify-center
+		ul
+			@apply flex items-center justify-center gap-6
+			li
+				a, span
+					@apply inline-flex items-center justify-center
+					@apply rem:w-[52px] rem:h-[52px] 
+					@apply bg-Utility-gray-50
+					@apply font-normal
+				&.active
+					a, span
+						@apply bg-Primary-1 text-white
+				&:hover
+					a
+						@apply bg-Primary-1 text-white
+	.product-item
+		@apply relative
+		// .block-thumb
+		// 	.thumb  
+		// 		@apply img-ratio ratio:pt-[1_1]
+		.block-info
+			border-image-source: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 85%, rgba(255,255,255,0) 100%)
+			border-image-slice: 1
+			@apply absolute-center w-full h-full z-2 text-center
+			@apply rem:border-[16px] xl:gap-5 xl:p-8 xl:rem:border-[20px] xl:px-10 xl:py-8
+			.child
+				background: linear-gradient(180deg, rgba(0, 91, 165, 0.00) 68.52%, rgba(0, 91, 165, 0.30) 92.22%)
+				@apply absolute inset-0 flex flex-col justify-end gap-y-5 xl:px-10 px-4 xl:py-8 py-5 z-1
+			&::before
+				background: linear-gradient(180deg, rgba(0, 91, 165, 0.00) 68.52%, rgba(0, 91, 165, 0.30) 92.22%)
+				@apply content-[''] absolute inset-0 z-1 transition-500 
+			&::after
+				@apply content-[''] absolute inset-0 -z-1 lg:opacity-0 lg:invisible transition-500
+				backdrop-filter: blur(6px)
+				background: radial-gradient(294.79% 141.42% at 0% 0%, rgba(0, 91, 165, 0.80) 0%, rgba(0, 116, 212, 0.40) 100%)
+			.info-name 
+				@apply heading-3 text-white line-clamp-2 font-semibold uppercase
+				@apply xl:rem:translate-y-[calc(var(--offset-bottom)-32px)] transition-500 shrink-0
+			.desc-project-list    
+				@apply flex flex-col gap-y-6 body-1 text-white overflow-y-auto overflow-scroll-1
+				@apply xl:opacity-0 xl:invisible transition-500
+				.title
+					@apply font-bold
+			.btn-primary
+				@apply xl:opacity-0 xl:invisible transition-500
+		@screen lg
+			&:hover
+				.block-info
+					&::after
+						@apply opacity-100 visible
+					&::before
+						@apply opacity-0 invisible
+					.info-name
+						@apply translate-y-0
+					.desc-project-list
+						@apply opacity-100 visible
+					.btn-primary
+						@apply opacity-100 visible
+	.news-item
+		@apply border-b border-b-Utility-gray-200
+		.content
+			@apply bg-white
+			.bottom-content
+				.dot
+					@apply sq-1 rounded-full bg-black
+	.market-item
+		@apply relative transition-all duration-300 overflow-hidden
+		&::before
+			content: ""
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%)
+			@apply absolute left-0 top-0 w-full h-full pointer-events-none z-1
+		.wrap-content
+			@apply absolute w-full bottom-0 left-0 z-2 transition-all duration-300
+			.wrap-content-bottom
+				background: rgba(49, 49, 49, 0.30)
+				backdrop-filter: blur(13.550000190734863px)
+				.btn-view-more
+					>a
+						@apply w-max
+		&:hover
+			.wrap-content
+				.wrap-content-bottom
+					background: rgba(0, 80, 146, 0.30)
+					backdrop-filter: blur(13.550000190734863px)
+					.btn-view-more
+						>a
+							@apply text-white bg-Primary-2 border-transparent
+					span
+						@apply text-white
+					.icon
+						@apply w-15
+						svg
+							path
+								@apply fill-white
+								stroke-width: 0
+	.button-contact 
+		>a
+			@apply h-12 bg-Primary-1 px-6 text-white uppercase font-semibold
+			@apply hover:bg-Primary-2 inline-flex items-center justify-center
+			@apply transition-500 xl:mt-0 mt-5

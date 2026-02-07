@@ -1,0 +1,177 @@
+mixin subscribeForm()
+	.subscribe-form
+		form(action="") 
+			.form-group
+				input(type="email" placeholder="Nhập Email của bạn")
+				.btn-submit 
+					span Gửi 
+					.icon 
+						<i class="fa-solid fa-chevron-right"></i>
+mixin PugImg(url="./img/1.jpg")
+	img(data-src=url, alt="", class="lozad " + attributes.class)
+mixin InputDate()
+	input(type="text" class="input-date" placeholder="Chọn ngày")
+mixin WrapItemHeight()
+	.item
+		.content(class="absolute bottom-0 left-0 w-full wrap-item-height z-10 p-6")
+			h3.title(class="text-Neutral-White title-32 mb-4 font-primary2") 
+				a(href="./activityDetail.html") Nguyên liệu thực phẩm
+			.desc(class="item-var-height")
+				.content-desc Cung cấp nguồn nguyên liệu thực phẩm chất lượng cao, từ nông sản Việt Nam tươi sạch đến các sản phẩm chế biến, đáp ứng tiêu chuẩn xuất khẩu quốc tế.
+mixin btnViewAll(text="Xem thêm")
+	a(href="" x-link class='btn-primary-2 btn ' + attributes.class)
+		span=text
+		img(src=imgButton, alt="", class="w-5 h-5 svg")
+mixin CountItem()
+	.item
+		.number.countup(data-number="12") 
+			span.count-value
+			span.suffix +
+		.title(class="body-1 font-normal") Năm kinh nghiệm
+mixin MenuTabslet()
+	.wrap-tabslet(data-toggle="tabslet")
+		ul.tabslet-tab
+			li.active
+				a(href="#") Thông tin sản phẩm
+			li
+				a(href="#") Ưu đãi và chiết khấu
+			li
+				a(href="#") Hướng dẫn sử dụng
+			li
+				a(href="#") Hướng dẫn bảo quản
+		.tabslet-content.active#tab1
+			h2(class="rem:text-[32px] font-bold text-Primary-1 mb-base text-center") Thông tin sản phẩm
+			.expand-content(class="overflow-hidden")
+				.format-content 
+					-for(var i = 0; i < 10; i ++)
+						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, similique non nostrum necessitatibus corrupti eaque esse cumque commodi aspernatur doloribus fugit, dignissimos provident suscipit! Dicta maxime perspiciatis odit iusto laboriosam.
+		.tabslet-content#tab2
+			h2(class="rem:text-[32px] font-bold text-Primary-1 mb-base text-center") Thông tin sản phẩm 2
+			.expand-content(class="overflow-hidden")
+				.format-content 
+					-for(var i = 0; i < 10; i ++)
+						p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, similique non nostrum necessitatibus corrupti eaque esse cumque commodi aspernatur doloribus fugit, dignissimos provident suscipit! Dicta maxime perspiciatis odit iusto laboriosam.
+mixin HeaderLanguageVertical()
+	ul 
+		li.wpml-ls-item
+			a(href="") 
+				span.wpml-ls-native VN
+		ul 
+			li 
+				a(href="") 
+					span EN
+mixin HeaderLanguageHorizontal()
+	ul 
+		li.wpml-ls-item
+			a(href="") 
+				span.wpml-ls-native VN
+		li.wpml-ls-item
+			a(href="") 
+				span.wpml-ls-native VN
+mixin BtnPrimary(text="")
+	a(href="", class='btn-primary btn ' + attributes.class)
+		span=text
+mixin HeaderMenu()
+	.header-menu 
+		ul 
+			-var menu = ['Giới thiệu','Sản phẩm','Dự án', 'Dịch vụ','Thông tin','Tuyển dụng']
+			each item in menu
+				li.menu-item-has-children
+					a(href="")=item
+mixin Indicator()
+	.scroll(class="mt-base flex items-center gap-5")
+		.swiper-scrollbar
+		.indicator-swipe.active
+			img(src="./img/arrow-left.svg", alt="" class="arrow")
+			img(src="./img/Finger.png", alt="" class="hand")
+			img(src="./img/arrow-right.svg", alt="" class="arrow")
+mixin HeaderLanguage()
+	.header-language 
+		.header-language-active
+			ul 
+				li.wpml-ls-current-language
+					a(href="") 
+						.icon 
+							<i class="fa-light fa-globe"></i>
+						span.wpml-ls-native VN
+				ul 
+					li 
+						a(href="") 
+							span EN
+		.header-language-list
+			ul 
+				li.wpml-ls-current-language
+					a(href="") 
+						span.wpml-ls-native VN
+				ul 
+					li 
+						a(href="") 
+							span EN
+mixin VideoItem()
+	.video-item 
+		.img(class="relative")
+			a(href="#" class="img-ratio ratio:pt-[360_320]") 
+				+PugImg()
+			+PlayIcon()
+		.content 
+			h3 
+				a(href="#") Lorem ipsum dolor sit amet.
+			.desc 
+				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem beatae tempora totam pariatur dicta ea odio nulla sapiente, vero quis quam accusamus in a, sunt unde cum inventore quaerat accusantium.
+mixin PlayIcon()
+	.play-btn(class="pointer-events-none")
+		.icon 
+			img(src="./img/play-icon.svg", alt="", class="img-svg")
+mixin NewsItem()
+	.news-item(class="group")
+		.img 
+			a(href="./NewsDetail.html" class="img-ratio ratio:pt-[318_440] zoom-img") 
+				+PugImg()
+		.content(class="xl:p-6 p-4")
+			h3(class="heading-5 font-semibold group-hover:text-Primary-2 mb-3") 
+				a(href="#") Compare the quality and cost of construction stone by region
+			.bottom-content(class="flex items-center gap-2 font-normal body-4 font-secondary")
+				.day 20.08.2025
+				.dot 
+				.category(class="text-Primary-1") Tin công ty
+mixin ProductItem()
+	.product-item
+		.block-thumb 
+			.thumb(class="img-ratio ratio:pt-[540_373]") 
+				+PugImg("./img/product.png")
+		.block-info 
+			.child
+				h4.info-name QUICKLIME 
+				ul.desc-project-list 
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, similique non nostrum necessitatibus corrupti eaque esse cumque commodi aspernatur doloribus fugit, dignissimos provident suscipit! Dicta maxime perspiciatis odit iusto laboriosam.
+				.btn-view-more 
+					a(href="#" class="btn btn-primary") 
+						span SEE MORE
+						.icon 
+							img(src="./img/arrow.svg", alt="" class="img-svg")
+mixin MarketItem()
+	.market-item
+		.img
+			a(href="./MarketDetail.html" class="img-ratio ratio:pt-[559_828] zoom-img")
+				+PugImg()
+		.wrap-content(class="text-white")
+			.title(class="heading-2 font-extrabold uppercase mb-2 py-6 xl:px-10 px-4")
+				a(href="./MarketDetail.html") IRON & STEEL 
+			.wrap-content-bottom(class="border-t-2 border-t-white xl:p-10 p-5 flex items-center justify-between gap-base")
+				.desc(class="body-1 font-normal font-secondary line-clamp-2") 
+					p Steel is used in buildings, infrastructure, tools, ships, trains, cars, machinery, and electrical appliances. Lime is an essential element for the purification of metal products. The metal production process cannot be conceived without the use of lime, which purifies products created in the steel mill by modifying their composition.
+				.btn-view-more
+					a(href="#" class="btn btn-primary")
+						span SEE MORE
+						.icon
+							img(src="./img/arrow.svg", alt="" class="img-svg")
+mixin ServiceItem()
+	.service-item
+		.img 
+			a(href="#" class="img-ratio ratio:pt-[224_400] zoom-img") 
+				+PugImg()
+		.content(class="mt-6")
+			h3.title(class="heading-3 font-semibold mb-2")
+				a(href="#") Mining
+			.desc(class="body-1 font-secondary font-normal line-clamp-2")
+				p Our main input material is Limestone.

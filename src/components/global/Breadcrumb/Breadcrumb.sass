@@ -1,0 +1,14 @@
+.global-breadcrumb
+	@apply bg-white border-b border-Utility-gray-100
+	p
+		@apply h-[calc(48/1920*100rem)] flex items-center overflow-auto gap-4
+		a
+			&:first-child
+				@apply text-0
+				&::before
+					content: '\f015'
+					@apply font-awesome font-black text-base
+		a,span
+			@apply text-base text-Utility-gray-500 whitespace-nowrap
+
+

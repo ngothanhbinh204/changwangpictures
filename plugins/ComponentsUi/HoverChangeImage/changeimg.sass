@@ -1,0 +1,68 @@
+.home-3
+	@apply rem:min-h-[1398px] h-full -mt-15 relative overflow-hidden
+	@screen -xl
+		@apply min-h-[83.8125rem]
+	.wrapper-container
+		@apply xl:rem:mt-[100px]
+		@screen -xl
+			@apply rem:mt-[100px] #{!important}
+	.heading
+		.title-gradient
+			@apply left-[3.5rem] top-[5rem]
+	.wrapper
+		.col-left
+			.img
+				@apply cursor-pointer overflow-visible
+				img
+					@apply rem:rounded-[40px]
+				@screen -xl
+					@apply flex flex-col
+					height: auto !important
+					padding-top: 0 !important
+					overflow: visible
+					@apply gap-base
+					>img
+						@apply relative w-[88%] ml-auto h-[20rem]
+				.img-small
+					@apply absolute bottom-0 left-0 -translate-x-2/4 translate-y-2/4
+					img
+						@apply border-8 border-white 
+					@screen -xl
+						@apply translate-x-0 absolute bottom-0 translate-y-0 left-0 w-[10.5rem]
+		.col-right
+			.wrap-item-toggle-img	
+				@apply pb-10 border-b border-b-white/30 last:border-b-0 last:pb-0
+				.item-toggle 
+					>.icon
+						@apply sq-20 inline-flex items-center justify-center rounded-full
+						@apply bg-white shadow-Shadow-2 border transition-all duration-300
+						.img
+							@apply sq-12
+							svg
+								@apply w-full h-full object-contain
+								path
+									@apply fill-Primary-1
+				&.active
+					.item-toggle
+						>.icon
+							@apply bg-Primary-1 border-transparent
+							.img
+								svg
+									path
+										@apply fill-white
+					.wrap-content
+						h3
+							@apply text-Primary-1
+				&:hover
+					.item-toggle
+						>.icon
+							@apply bg-Primary-1 border-transparent
+							.img
+								svg
+									path
+										@apply fill-white
+					.wrap-content
+						h3
+							@apply text-Primary-1
+
+
