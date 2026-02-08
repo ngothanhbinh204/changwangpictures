@@ -1,0 +1,51 @@
+.home-banner
+	@apply pt-[120px] xl:pt-[160px]
+	.banner-text
+		@apply px-4
+		h1
+			@apply leading-tight font-normal
+			span.italic
+				font-style: italic
+	.banner-img
+		.img-ratio
+			@apply w-full
+
+.home-intro
+	.intro-text
+		@apply max-w-[960px]
+		.heading-2
+			@apply font-normal
+			span.italic
+				font-style: italic
+
+.home-services
+	.container-text
+		// @apply max-w-[1240px]
+	.service-list
+		@apply flex flex-col gap-2
+		li
+			@apply text-4xl md:text-6xl xl:text-7xl font-black uppercase leading-none tracking-tighter
+	.content-box
+		@apply font-primary space-y-6
+		p
+			@apply font-normal text-base lg:text-lg mb-6 leading-relaxed
+	.link-arrow
+		@apply text-sm font-bold tracking-widest border-b border-black pb-1 hover:text-black/70 transition-colors
+
+.home-connect
+	.newsletter-form
+		@apply space-y-4 flex flex-row w-full max-w-md gap-10 items-end
+		.wrapper-form
+			@apply w-full
+			.form-group
+				@apply w-full
+				input
+					@apply w-full pb-2 outline-none bg-transparent placeholder-black/40 text-black py-4 font-primary text-sm uppercase tracking-wide
+		button
+			@apply tracking-widest hover:gap-4 transition-all duration-300 mt-4
+			@apply flex items-center gap-2 uppercase font-bold text-sm pb-2
+
+.home-footer-banner
+	.footer-banner-img
+		.img-ratio
+			@apply w-full

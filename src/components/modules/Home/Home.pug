@@ -1,0 +1,84 @@
+section.home-banner
+		.banner-text.mb-10
+			h1.text-center.title-68 A global 
+				span.italic creative 
+				| studio 
+				br 
+				| based in 
+				span.italic Saigon, Vietnam
+		.banner-img
+			.img-ratio(class="ratio:pt-[704_1440]")
+				+PugImg("./img/banner_1.png")
+
+section.home-intro.section-py 
+	.container
+		.intro-text.text-center.mx-auto
+			h2.heading-2.title-48 Trusted as a leading 
+				span.italic creative partner 
+				br
+				| to 
+				span.italic make 
+				| multi-dimensional work for 
+				br
+				| globally-desired, progressively-minded brands.
+
+section.home-showcase
+	.showcase-img
+		.img-ratio(class="ratio:pt-[704_1440]")
+			+PugImg("./img/banner_1.png")
+
+section.home-services.section-py
+	.container.container-text
+		.grid(class="grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center")
+			.col-left 
+				ul.service-list
+					li ART DIRECTING
+					li FILM MAKING
+					li PHOTOGRAPHY
+					li EDITING
+			.col-right 
+				.content-box.max-w-xl
+					p.body-1.mb-6 We're a artistic duo based in Saigon one directs, the other makes sure it doesn't look ugly.
+					p.body-1.mb-6 Somewhere between an art director and a photographer, we argue about light, eat too much street food, and somehow still make films together.
+					p.body-1.mb-10 Let's make something cool together. Or just say hi: hello@changwangpictures.com
+					a(href="./contact.html").link-arrow.inline-flex.items-center.gap-2.uppercase.font-bold CONTACT 
+						i.fa-regular.fa-arrow-right
+
+section.home-detail
+	.detail-img
+		.img-ratio(class="ratio:pt-[704_1440]")
+			+PugImg("./img/banner_1.png")
+
+section.home-connect.section-py
+	.container
+		h2.heading-1.uppercase.mb-10 CONNECT WITH US.
+		.grid(class="grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20")
+			.col-left 
+				.connect-img.h-full
+					.img-ratio.h-full(class="ratio:pt-[600_600]")
+						+PugImg("./img/home/connect.jpg")
+			.col-right.flex.flex-col.justify-center.items-center
+				p.title-28.mb-8.text-center Sign up to our 
+					span.italic newsletter 
+					| and stay up to date with our 
+					br 
+					| cultural 
+					span.italic news, views & insights
+				
+				form.newsletter-form
+					.wrapper-form 
+						.form-group
+							input(type="text" placeholder="FIRST NAME")
+						.form-group
+							input(type="text" placeholder="LAST NAME")
+						.form-group
+							input(type="email" placeholder="YOUR EMAIL ADDRESS HERE...")
+						
+					button(type="submit")
+						| SUBSCRIBE 
+						i.fa-regular.fa-arrow-right
+
+section.home-footer-banner
+	.footer-banner-img
+		.img-ratio(class="ratio:pt-[475_1440]")
+			+PugImg("./img/banner_1.png")

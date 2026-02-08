@@ -1,0 +1,57 @@
+.work-page
+	.work-intro
+		@apply text-center mx-auto mb-10 lg:mb-20
+		h1
+			@apply leading-[1.1] tracking-[-0.5%] mb-10 md:mb-15 lg:mb-20
+		p
+			@apply max-w-3xl mx-auto
+	.work-promo
+		@apply grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-x-5 mb-10 lg:mb-18
+		h2
+			@apply mb-5 lg:mb-6
+		.category-title
+			@apply uppercase text-center mb-5 lg:mb-6 font-bold
+		.work-content
+			.title
+				@apply text-[24px] lg:text-[28px] italic font-primary mb-2.5 font-semibold
+			.desc
+				@apply text-sm lg:text-base mb-4 text-gray-700 font-light
+			.tag
+				@apply text-sm md:text-[20px] font-extrabold text-[#999] tracking-[1.92px] leading-[1.2]
+
+	.work-list
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-y-18
+	.work-card
+		.work-slider
+			@apply relative
+			.img-ratio
+				video
+					@apply w-full h-full object-cover
+			.swiper-nav-custom
+				@apply absolute top-1/2 -translate-y-1/2 w-full z-10 flex justify-between px-4 pointer-events-none
+				.btn-prev, .btn-next
+					@apply pointer-events-auto w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-black text-white flex items-center justify-center cursor-pointer transition-all duration-300
+					@apply opacity-0 translate-y-2 hover:bg-white hover:text-black hover:border hover:border-black
+				.btn-prev
+					@apply -translate-x-2
+				.btn-next
+					@apply translate-x-2
+			&:hover
+				.swiper-nav-custom
+					.btn-prev, .btn-next
+						@apply opacity-100 translate-y-0 translate-x-0
+
+		.work-content
+			@apply mt-5
+			> *
+				@apply text-left
+			.title
+				@apply text-[20px] lg:text-[24px] italic font-primary mb-2.5 font-semibold
+			.desc
+				@apply text-sm lg:text-base mb-4 text-gray-700 font-light leading-1.125
+			.tag
+				@apply text-sm md:text-base font-extrabold text-[#999] tracking-[1.92px] leading-[1.2]
+
+
+.space-to-top
+	@apply pt-20 lg:pt-24

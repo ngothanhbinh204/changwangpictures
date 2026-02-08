@@ -1,0 +1,107 @@
+-
+	var workPromo = [
+		{
+			category: "BRAND",
+			items: [
+				{
+					title: "Paintings - A Visual Exploration",
+					desc: "'This Is My Taste' featuring Jamie Dorman as the 'Diet Coke guy', but not as you'd expect to see him; in an above the line campaign that celebrates identity and self-expression through the eccentricity of individual taste.",
+					subTitle: "Travel Stories // Tuyen Lam Lakes",
+					ratio: "ratio:pt-[428_652]", // Landscape approx
+					gallery: [
+						{ src: "./img/banner_1.png" },
+						{ src: "./img/banner_1.png" },
+					]
+				}
+			]
+		},
+		{
+			category: "PERSONAL",
+			items: [
+				{
+					title: "Paintings - A Visual Exploration",
+					desc: "'This Is My Taste' featuring Jamie Dorman as the 'Diet Coke guy', but not as you'd expect to see him; in an above the line campaign that celebrates identity and self-expression through the eccentricity of individual taste.",
+					subTitle: "Travel Stories // Tuyen Lam Lakes",
+					ratio: "ratio:pt-[428_652]", // Landscape approx
+					gallery: [
+						{ src: "./img/banner_1.png" },
+						{ src: "./img/banner_1.png" },
+					]
+				}
+			]
+		}
+	]
+
+	var workList = [
+		{
+			title: "Federico Cina",
+			desc: "Creative direction and content production for his SS25 Fashion Show at Milan Fashion Week.",
+			subTitle: "Travel Stories // Tuyen Lam Lakes",
+			ratio: "ratio:pt-[606_428]", // Portrait
+			gallery: [
+				{ src: "./img/banner_1.png" },
+				{ src: "./img/banner_1.png" },
+			]
+		},
+		{
+			title: "Federico Cina",
+			desc: "Creative direction and content production for his SS25 Fashion Show at Milan Fashion Week.",
+			subTitle: "Travel Stories // Tuyen Lam Lakes",
+			ratio: "ratio:pt-[606_428]", // Portrait
+			gallery: [
+				{ src: "./img/banner_1.png" },
+				{ src: "./img/banner_1.png" },
+			]
+		},
+		{
+			title: "Federico Cina",
+			desc: "Creative direction and content production for his SS25 Fashion Show at Milan Fashion Week.",
+			subTitle: "Travel Stories // Tuyen Lam Lakes",
+			ratio: "ratio:pt-[606_428]", // Portrait
+			gallery: [
+				{ src: "./img/banner_1.png" },
+				{ src: "./img/banner_1.png" },
+			]
+		},
+		{
+			title: "Federico Cina",
+			desc: "Creative direction and content production for his SS25 Fashion Show at Milan Fashion Week.",
+			subTitle: "Travel Stories // Tuyen Lam Lakes",
+			ratio: "ratio:pt-[606_428]", // Portrait
+			gallery: [
+				{ src: "./img/banner_1.png" },
+				{ src: "./img/banner_1.png" },
+			]
+		},
+		{
+			title: "Federico Cina",
+			desc: "Creative direction and content production for his SS25 Fashion Show at Milan Fashion Week.",
+			subTitle: "Travel Stories // Tuyen Lam Lakes",
+			ratio: "ratio:pt-[606_428]", // Portrait
+			gallery: [
+				{ src: "./img/banner_1.png" },
+				{ src: "./img/banner_1.png" },
+			]
+		}
+	]
+.space-to-top
+section.work-page.section-py
+	.work-intro.container.max-w-full
+		h1.title-42.font-normal Changwang creates multi-dimensional works;
+				br
+				| From campaigns and full service production,
+				br
+				| to experiential and social-first content
+				br
+				| — shaped by insight, ideas & artistry.
+
+		.work-promo
+			each col in workPromo
+				.item
+					h2.title-40.font-bold!= col.category
+					each item in col.items
+						+WorkCard(item)
+
+		.work-list
+			each item in workList
+				+WorkCard(item)

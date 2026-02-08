@@ -175,3 +175,29 @@ mixin ServiceItem()
 				a(href="#") Mining
 			.desc(class="body-1 font-secondary font-normal line-clamp-2")
 				p Our main input material is Limestone.
+
+mixin WorkCard(data)
+	.work-card
+		.work-slider
+			.swiper.work-swiper
+				.swiper-wrapper
+					if data.gallery
+						each item in data.gallery
+							.swiper-slide
+								.img-ratio(class=data.ratio || "ratio:pt-[704_520]")
+									if item.type == 'video'
+										video(src=item.src muted playsinline loop)
+									else
+										+PugImg(item.src)
+			.swiper-nav-custom
+				.btn-prev
+					i.fa-sharp.fa-regular.fa-arrow-left
+				.btn-next
+					i.fa-sharp.fa-regular.fa-arrow-right
+		.work-content
+			h3.title!= data.title
+			p.desc!= data.desc
+			p.tag!= data.subTitle
+
+mixin SpaceToTop(space)
+	.space-to-top(class=space)

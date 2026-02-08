@@ -1,32 +1,37 @@
 .header
-	@apply px-4 border-b border-black/10 bg-white
+	@apply px-4 border-b border-[#676767] bg-white
 	@apply fixed left-0 right-0 z-100 top-0
 	@apply transition-all duration-300
 	.header-wrapper
 		@apply flex items-center justify-between
-		@apply h-20 xl:h-[100px]
+		@apply h-20 xl:h-auto py-6
 		.header-logo
-			@apply w-28 xl:w-[140px] flex-shrink-0
+			@apply w-24 xl:w-[260px] flex-shrink-0
 			a
 				@apply block w-full
 				img
 					@apply w-full h-auto object-contain
 		.header-right
-			@apply flex items-center gap-6 xl:gap-8
+			@apply flex items-center gap-6 xl:gap-8 py-3
 			.header-menu
 				@apply hidden lg:block
 				ul.header-nav
 					@apply flex items-center gap-6 xl:gap-8
 					li
 						a
-							@apply text-[13px] xl:text-[14px] font-bold uppercase tracking-wider text-black transition-colors hover:text-black/60
+							@apply relative text-sm font-bold uppercase tracking-wider text-black transition-colors
+							&:after
+								@apply content-[""] absolute -bottom-1 left-0 block w-0 h-[2px] transition-all duration-300
+							&:hover
+								&:after
+									@apply w-full h-[2px] bg-black
 			.header-socials
 				@apply hidden lg:block
 				ul
 					@apply flex items-center gap-4
 					li
 						a
-							@apply text-[16px] xl:text-[18px] text-black transition-colors hover:text-black/60
+							@apply text-sm xl:text-base text-black transition-colors hover:text-black/60
 
 	.header-bar
 		@apply flex lg:hidden items-center justify-center

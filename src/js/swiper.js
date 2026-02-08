@@ -111,6 +111,7 @@ export function swiperInit() {
 	swiperBanner();
 	swiperProductDetail();
 	swiperFieldOp();
+	swiperWork();
 
 	const about_5 = new Swiper(`.about-5 .swiper`, {
 		modules: [Autoplay, Navigation],
@@ -799,8 +800,85 @@ function swiperFieldOp() {
 // 			$(swiper.el).attr("data-auto-play", "stop");
 // 		});
 
-// 		thumbSwiper.el.addEventListener("mouseleave", () => {
-// 			swiper.autoplay.start();
 // 		});
 // 	}
 // }
+
+function swiperWork() {
+	const workCards = document.querySelectorAll('.work-card');
+	if (!workCards.length) return;
+
+	workCards.forEach((card, index) => {
+		const swiperEl = card.querySelector('.swiper');
+		if (!swiperEl) return;
+		
+		card.classList.add(`work-card-${index}`);
+		
+		const nextEl = card.querySelector('.btn-next');
+		const prevEl = card.querySelector('.btn-prev');
+
+		const swiper = new Swiper(swiperEl, {
+			modules: [Navigation, Pagination, EffectFade, Autoplay],
+			loop: true,
+			effect: 'fade',
+			fadeEffect: { crossFade: true },
+			autoplay: {
+				delay: 3500,
+				disableOnInteraction: false,
+			},
+			slidesPerView: 1,
+			speed: 700,
+			navigation: {
+				nextEl: nextEl,
+				prevEl: prevEl,
+			},
+			on: {
+				init: function() {
+					// Handle initial slide
+					// We need to wait for DOM to be ready sometimes
+					setTimeout(() => {
+						if (this.slides && this.slides.length > 0) {
+							const currentSlide = this.slides[this.activeIndex];
+							handleVideo(currentSlide, this);
+						}
+					}, 100);
+				},
+				slideChangeTransitionEnd: function() {
+					// Pause all videos first
+					if (this.slides) {
+						this.slides.forEach((slide) => {
+							const v = slide.querySelector("video");
+							if (v) {
+								v.pause(); // Pause
+								v.currentTime = 0; // Reset
+							}
+						});
+						const currentSlide = this.slides[this.activeIndex];
+						handleVideo(currentSlide, this);
+					}
+				}
+			}
+		});
+
+		function handleVideo(slide, swiperInstance) {
+			if (!slide) return;
+			const video = slide.querySelector("video");
+			
+			if (video) {
+				swiperInstance.autoplay.stop();
+				video.muted = true; // Always muted for autoplay
+				video.play().catch(e => console.log("Video play error:", e));
+				
+				// When video ends, go to next slide
+				video.onended = () => {
+					swiperInstance.slideNext();
+				};
+			} else {
+				// If image, just start autoplay
+				if (swiperInstance.autoplay && !swiperInstance.autoplay.running) {
+					swiperInstance.autoplay.start();
+				}
+			}
+		}
+	});
+}
