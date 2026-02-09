@@ -112,6 +112,7 @@ export function swiperInit() {
 	swiperProductDetail();
 	swiperFieldOp();
 	swiperWork();
+	swiperRelatedVideos();
 
 	const about_5 = new Swiper(`.about-5 .swiper`, {
 		modules: [Autoplay, Navigation],
@@ -311,6 +312,33 @@ function swiperProductDetail() {
 		swiperThumb,
 		swiperDetail,
 	};
+}
+
+// Related Videos Swiper (Popup)
+function swiperRelatedVideos() {
+	const swiperEl = document.querySelector(".related-videos .swiper");
+	if (!swiperEl) return;
+
+	new Swiper(swiperEl, {
+		modules: [Navigation],
+		slidesPerView: "auto",
+		spaceBetween: 20,
+		speed: 600,
+		navigation: {
+			nextEl: ".related-videos .swiper-button-next",
+			prevEl: ".related-videos .swiper-button-prev",
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: "auto",
+				spaceBetween: 10,
+			},
+			768: {
+				slidesPerView: "auto",
+				spaceBetween: 20,
+			},
+		},
+	});
 }
 
 // Field Operation Swiper - Sustainability Section

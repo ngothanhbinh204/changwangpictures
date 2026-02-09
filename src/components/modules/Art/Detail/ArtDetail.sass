@@ -1,0 +1,169 @@
+
+.art-detail-page
+	@apply pt-0 #{!important}
+	.art-detail-top
+		@apply grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center mb-10 lg:mb-18 border-b border-gray-600
+		.col-img
+			.img-ratio
+				@apply w-full h-full object-cover
+		.col-content
+			@apply text-center flex flex-col gap-6 lg:gap-14 
+			.title
+				@apply text-4xl lg:text-6xl font-bold font-secondary uppercase
+			.subtitle
+				@apply text-sm font-bold tracking-widest uppercase
+			.desc
+				@apply text-lg font-normal
+				font-style: italic
+
+	.art-detail-quote
+		@apply text-center mx-auto mb-10 lg:mb-18 max-w-[1243px] mx-auto
+		.quote-text
+			@apply text-2xl lg:text-3xl font-normal leading-relaxed
+			
+		.quote-desc
+			@apply space-y-4 mt-10 text-left text-base lg:text-[20px] font-normal leading-relaxed text-black/90 max-w-[900px] mx-auto
+
+	
+	.art-detail-gallery
+		@apply grid grid-cols-1 md:grid-cols-2 gap-5 mb-10 lg:mb-18
+		.col-img
+			.img-ratio
+				@apply w-full h-full object-cover
+
+	.art-detail-interview
+		@apply grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-10 lg:mb-18
+		.col-qa
+			.question
+				@apply text-lg lg:text-xl font-bold mb-4 lg:mb-0 leading-snug
+			.answer
+				@apply text-base lg:text-[20px] font-normal leading-relaxed text-black/90
+
+	.art-detail-highlight
+		@apply text-center max-w-3xl mx-auto mb-10 lg:mb-18
+		.highlight-text
+			@apply text-2xl lg:text-3xl font-normal leading-relaxed
+			
+
+	.art-detail-video
+		@apply grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-10 lg:mb-18 items-center
+		.col-video
+			.img-ratio
+				@apply relative w-full h-full object-cover
+				.play-button
+					@apply flex items-center justify-center aspect-square
+					@apply sq-20 border-2 border-white rounded-full
+					@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl cursor-pointer hover:scale-110 transition-transform duration-300
+		.col-info
+			.video-title
+				@apply text-3xl lg:text-4xl font-normal mb-2 uppercase
+			.video-meta
+				@apply text-gray-500 tracking-widest uppercase text-xs mb-6
+			.video-desc
+				@apply text-base lg:text-[20px] font-normal leading-relaxed text-black/90 mb-6
+			.video-credits
+				@apply text-sm font-light leading-relaxed text-gray-600 uppercase
+
+//- Popup Styles
+.popup-video
+	@apply fixed inset-0 z-[9999] bg-white hidden opacity-0 transition-opacity duration-300 h-screen
+	&.active
+		@apply flex flex-col opacity-100
+
+	.popup-header
+		@apply flex justify-between items-center p-4 lg:px-10 lg:py-6 bg-white z-10 shrink-0
+		.share-action
+			@apply flex items-center gap-2 text-sm text-gray-500 cursor-pointer hover:text-black
+			i
+				@apply text-lg
+		.close-popup
+			@apply text-2xl cursor-pointer hover:rotate-90 transition-transform duration-300 w-10 h-10 flex items-center justify-center
+
+	.main-content
+		@apply flex-1 flex flex-col lg:flex-row gap-6 px-4 lg:px-10 overflow-hidden pb-4 min-h-0 max-w-[80%] mx-auto
+		.video-container
+			@apply w-full lg:w-3/4 flex items-center justify-center bg-black relative h-full overflow-hidden
+			.video-wrapper
+				@apply relative w-full h-full flex items-center justify-center aspect-video
+				video
+					@apply max-w-full max-h-full w-full h-full object-contain
+				
+				.video-poster
+					@apply absolute inset-0 z-10 w-full h-full
+					img
+						@apply w-full h-full object-cover
+				
+				.video-overlay
+					@apply absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/40 text-center text-white transition-opacity duration-300
+					.overlay-content
+						@apply max-w-2xl px-4 
+						.video-tag
+							@apply text-sm uppercase tracking-widest mb-4 opacity-80
+						.overlay-title
+							@apply text-2xl lg:text-4xl font-light mb-8
+						.btn-play-popup
+							@apply w-16 h-16 lg:w-20 lg:h-20 border-2 border-white rounded-full flex items-center justify-center text-2xl cursor-pointer hover:scale-110 transition-transform duration-300 mx-auto
+			
+			&.is-playing
+				.video-poster, .video-overlay
+					@apply opacity-0 pointer-events-none
+
+		.info-container
+			@apply w-full lg:w-1/4 pt-4 lg:pt-0 overflow-y-auto h-full pr-2 shrink-0
+			&::-webkit-scrollbar
+				width: 4px
+			&::-webkit-scrollbar-track
+				background: #f1f1f1
+			&::-webkit-scrollbar-thumb
+				background: #888
+				border-radius: 2px
+			.video-title
+				@apply text-2xl font-light mb-2
+			.video-duration
+				@apply text-xs text-gray-500 mb-8 block
+			.video-meta-list
+				@apply space-y-4 text-sm
+				.meta-item
+					@apply flex flex-col
+					.label
+						@apply text-gray-500 mb-1 text-xs
+					.value
+						@apply font-normal text-sm
+
+	.related-videos
+		@apply relative h-[160px] lg:h-[200px] bg-black px-12 py-4 flex items-center shrink-0 w-full z-20 border-t border-white/10
+		.swiper.related-swiper
+			@apply w-full h-full
+		
+		.swiper-wrapper
+			@apply flex items-center
+			
+		.swiper-slide
+			@apply w-[240px] cursor-pointer h-full
+			.video-thumb-item
+				@apply relative h-full w-full block
+				.img-ratio
+					@apply w-full h-full object-cover opacity-60 transition-opacity duration-300 block relative overflow-hidden
+					img
+						@apply w-full h-full object-cover
+					.play-icon
+						@apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl opacity-0 transition-opacity duration-300
+				.thumb-info
+					@apply absolute bottom-3 left-3 text-white text-xs opacity-0 transition-opacity duration-300 z-10 font-medium tracking-wide drop-shadow-md
+				
+				&:hover
+					.img-ratio
+						@apply opacity-100
+						.play-icon
+							@apply opacity-100
+					.thumb-info
+						@apply opacity-100
+
+		.swiper-button-prev, .swiper-button-next
+			@apply absolute top-1/2 -translate-y-1/2 text-white w-8 h-8 flex items-center justify-center z-10 cursor-pointer hover:text-gray-300 transition-colors
+			&::after
+				@apply text-xl font-bold
+		.swiper-button-prev
+			@apply left-2
+		.swiper-button-next
+			@apply right-2

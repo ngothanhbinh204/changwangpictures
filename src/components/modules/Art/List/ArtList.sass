@@ -1,0 +1,40 @@
+
+.space-header
+	@apply pt-[80px] lg:pt-[100px]
+
+.art-page
+	.art-intro
+		@apply text-center mx-auto mb-10 lg:mb-16 max-w-4xl
+		h1 
+			span.italic
+				@apply font-light
+				font-style: italic
+
+	.art-list
+		@apply columns-1 md:columns-2 lg:columns-3 gap-5
+		.art-item
+			@apply block relative mb-5 break-inside-avoid overflow-hidden
+			.img-ratio
+				@apply w-full block
+				img
+					@apply w-full h-full object-cover block transition-transform duration-700
+			
+			.art-overlay
+				@apply absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center p-6 text-center text-white
+				.content
+					@apply flex flex-col items-center gap-4 translate-y-4 transition-transform duration-300
+					.title
+						@apply text-2xl lg:text-3xl font-primary
+					.desc
+						@apply text-sm lg:text-base font-light line-clamp-4
+					.btn-linkFiles
+						@apply text-xs font-bold tracking-widest uppercase mt-4
+			
+			&:hover
+				.img-ratio
+					img
+						@apply scale-105
+				.art-overlay
+					@apply opacity-100
+					.content
+						@apply translate-y-0

@@ -1,0 +1,32 @@
++SpaceToTop('space-header')
+section.about-page.section-py
+	.container.max-w-full
+		//- Founders Section
+		.about-founders
+			.founder-item
+				.img-ratio(class="ratio:pt-[1_1]")
+					+PugImg("./img/banner_1.png")
+				.founder-info
+					p #[strong Chang] (Trang) is a #[strong finance specialist] but have the fire of art inside her. She is the #[strong producer] of the studio, but also the #[strong model, photographer, editor] sometime #[strong makeup artist], sometime #[strong stylist] :D
+
+			.founder-item
+				.img-ratio(class="ratio:pt-[1_1]")
+					+PugImg("./img/banner_1.png")
+				.founder-info
+					p #[strong Wang] (Quang) is an #[strong art director] in entertainment industry. He can draw, paint, doing 3d stuffs. Oneday he watched an film that make him want to be a #[strong filmmaker], now he doing it with Chang.
+
+		//- Team Section
+		.about-team
+			- for(var i = 1; i <= 4; i++)
+				.team-item
+					.img-ratio(class="ratio:pt-[336_336]")
+						+PugImg("./img/banner_1.png")
+					.content
+						h3.name Lorem ipsum dolor
+						a.email(href="mailto:loremipsum.dolor@gmail.com") 
+							i.fa-regular.fa-envelope
+							span loremipsum.dolor@gmail.com
+						.desc 
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							br
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.

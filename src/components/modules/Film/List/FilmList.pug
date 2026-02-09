@@ -1,0 +1,64 @@
+-
+	var films = [
+		{
+			title: "THE BLACK CAT",
+			category: "Feature Film",
+			director: "Auralie Chang",
+			dp: "Auralie Chang",
+			producer: "Auralie Chang & Wang",
+			img: "./img/banner_1.png"
+		},
+		{
+			title: "UNDER50",
+			category: "Feature Film",
+			director: "Auralie Chang",
+			dp: "Auralie Chang",
+			producer: "Auralie Chang & Wang",
+			img: "./img/banner_1.png"
+		},
+		{
+			title: "THE BLACK CAT",
+			category: "Feature Film",
+			director: "Auralie Chang",
+			dp: "Auralie Chang",
+			producer: "Auralie Chang & Wang",
+			img: "./img/banner_1.png"
+		},
+		{
+			title: "UNDER50",
+			category: "Feature Film",
+			director: "Auralie Chang",
+			dp: "Auralie Chang",
+			producer: "Auralie Chang & Wang",
+			img: "./img/banner_1.png"
+		}
+	]
++SpaceToTop('space-header')
+//- Mixin for reusable film item
+mixin FilmItem(item)
+	.film-item
+		.film-bg
+			.img-ratio(class="ratio:pt-[556_1440]")
+				+PugImg(item.img)
+			.film-overlay
+		
+		.film-content
+			.container.max-w-full
+				.content-wrapper
+					.info-col
+						h2.film-title= item.title
+						.film-meta
+							p.cate= item.category
+							p.director Director: #{item.director}
+							p.dp DP: #{item.dp}
+							p.producer Produced by #{item.producer}
+					
+					.action-col
+						a.btn-view-more(href="#")
+							span.text VIEW MORE
+							span.icon
+								i.fa-sharp.fa-light.fa-arrow-right-long
+
+section.film-list-page
+	each film in films
+		+FilmItem(film)

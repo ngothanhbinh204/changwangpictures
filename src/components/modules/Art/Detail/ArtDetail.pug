@@ -1,0 +1,144 @@
++SpaceToTop('space-header')
+section.art-detail-page.section-py
+	.container.max-w-full
+		//- Top Intro Section
+		.art-detail-top
+			.col-img
+				.img-ratio.ratio-portrait
+					+PugImg("./img/banner_1.png")
+			.col-content
+				h1.title Luna Lopez
+				p.subtitle PHOTOGRAPHER AURALIE CHANG
+				p.desc Navigating the intersection of Body Expression with Luna Lopez.
+
+		//- Quote Section
+		.art-detail-quote
+			h2.quote-text I use the medium to #[span.italic process] and #[span.italic communicate] an #[span.italic emotional] state, that I otherwise can find hard to #[span.italic deal] with.
+			.quote-desc
+				p In our exploration of Luna Lopez's artistic vision, we encountered a masterful navigation of the nuanced interplay between intimacy and violence. Luna gracefully unveils her creative process, illuminating the deliberate juxtaposition of contrasting elements within her photographs. Through her adept manipulation of these dichotomies, Luna invites viewers to engage in a profound reflection on the intricate layers of human emotion and experience.
+
+		//- Gallery Section 1
+		.art-detail-gallery
+			.col-img
+				.img-ratio(class="ratio:pt-[815_652]")
+					+PugImg("./img/banner_1.png")
+			.col-img
+				.img-ratio(class="ratio:pt-[815_652]")
+					+PugImg("./img/banner_1.png")
+
+		//- Interview Section 1
+		.art-detail-interview
+			.col-qa
+				h3.question To start, could you share with us where you are from and how your childhood experiences have shaped your approach to creativity and photography?
+			.col-qa
+				p.answer I was born and raised in Denmark, but I'm currently based in Sweden. I grew up in a creative home, so in a way I always knew that following that way was a possibility. I didn't see my father often, but when he came to visit from Spain, he would bring a small camera with him. I didn't give it much thought then, but after receiving his dv-tapes a few years back, I realized how it was a way for him to connect with me when language barriers and distance made it difficult. I've been reflecting a lot about this regarding my own practice, and how I myself started out using the camera to feel at ease in social situations. The camera is a machine that helps you engage with others, but it surely also hides you. I am trying to not only be observant through my camera but to also connect and be present with the person in front of the lens.
+
+		.art-detail-interview
+			.col-qa
+				h3.question If I understand correctly, your mother is a dancer. Could you elaborate on how her profession has influenced your fascination with body expression?
+			.col-qa
+				p.answer Yes, that is correct. I grew up with my mom practicing at home and I was often brought to practices and dance performances. In that way, looking at people using their bodies to express emotions, is something I've carried with me from my upbringing. That being said, there are many other things in life that also have sparked an interest for body expression in me.
+
+		.art-detail-interview
+			.col-qa
+				h3.question Fragility, whether it's emotional, physical, or cultural, often leads to moments of vulnerability but can also pave the way for rebirth and resilience. How do you explore these themes of rebirth in your shots?
+			.col-qa
+				p.answer Absolutely, I believe that vulnerability goes hand in hand with great strength. Whether it's the resilience or power from overcoming something, or the courage of showing your emotional landscape to others. For me, photography is very therapeutic. I use the medium to process and communicate an emotional state, that I otherwise can find hard to deal with. It becomes a way to grasp and transform what's accumulating on the inside and bring it to the surface. If I struggle to find inspiration for an ongoing project, or if I see it taking a different turn, it's often because I, for that time of being, have built a resilience towards the subject matter.
+
+		//- Highlight Quote
+		.art-detail-highlight
+			h2.highlight-text What inspires me most, is probably to just be #[span.italic observant] and #[span.italic present], and trying to keep a childlike #[span.italic playfulness] alive.
+
+		//- Gallery Section 2
+		.art-detail-gallery
+			.col-img
+				.img-ratio(class="ratio:pt-[704_520]")
+					+PugImg("./img/banner_1.png")
+			.col-img
+				.img-ratio(class="ratio:pt-[704_520]")
+					+PugImg("./img/banner_1.png")
+
+		//- Video Section (Trigger)
+		.art-detail-video
+			.col-video
+				.img-ratio(class="ratio:pt-[360_640]")
+					+PugImg("./img/banner_1.png")
+					.play-button(data-video-src="")
+						i.fa-solid.fa-play
+			.col-info
+				h2.video-title LUNA LOPEZ
+				p.video-meta TRAVEL STORIES  •  00:30
+				
+				.video-desc
+					p Let us share a tip on sorting waste: If possible crumple everything up when throwing it in the garbage can – it allows more garbage to fit in. Our 2 videos are part of a campaign on how to properly sort trash for EKO-KOM and its website samosebou.cz
+				
+				.video-credits
+					p client: EKO-KOM
+					p agency: Havas Worldwide Prague
+					p directed by novak+nguyen
+
+//- Video Popup Modal
+#video-popup.popup-video
+	.popup-overlay
+	.popup-content
+		//- Header / Close
+		.popup-header
+			.share-action
+				i.fa-sharp.fa-light.fa-share-nodes
+				span Share
+			.close-popup
+				i.fa-light.fa-xmark
+
+		//- Main Content Grid
+		.main-content
+			.video-container
+				.video-wrapper
+					video(playsinline)
+						source(src="" type="video/mp4")
+					
+					.video-poster
+						img(src="./img/banner_1.png" alt="Video Poster")
+					
+					.video-overlay
+						.overlay-content
+							.video-tag AZN kru
+							h2.overlay-title Barbora Mochowa – White & Black
+							.btn-play-popup
+								i.fa-solid.fa-play
+			
+			.info-container
+				h2.video-title Viah – Gloria
+				p.video-duration 03:46
+				
+				.video-meta-list
+					.meta-item
+						span.label client: 
+						span.value viah
+					.meta-item
+						span.label directed by: 
+						span.value Dužan Duong
+					.meta-item
+						span.label dp: 
+						span.value Dužan Duong
+					.meta-item
+						span.label producer: 
+						span.value Jan Syruček
+
+		//- Related Videos Slider
+		.related-videos
+			.swiper.related-swiper
+				.swiper-wrapper
+					- for(var i = 1; i <= 10; i++)
+						.swiper-slide
+							.video-thumb-item(data-src="https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_15000kbps_1080p_60.0fps_h264.mp4" data-title=`Related Video ${i}` data-duration="01:13")
+								.img-ratio(class="ratio:pt-[168_300]")
+									+PugImg("./img/banner_1.png")
+									.play-icon
+										i.fa-solid.fa-play
+								.thumb-info
+									h4.title Video Title #{i}
+									span.duration 01:13
+			.swiper-button-prev
+			.swiper-button-next
+
+

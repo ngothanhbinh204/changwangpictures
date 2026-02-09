@@ -1,0 +1,116 @@
+
+.space-header
+	@apply pt-[80px] lg:pt-[100px]
+
+.blog-detail-page
+	.blog-header
+		@apply text-center mb-8 lg:mb-12
+		.category
+			@apply text-sm font-bold tracking-widest text-gray-500 uppercase mb-4
+		.title
+			@apply text-3xl lg:text-5xl font-bold font-secondary mb-6 leading-tight max-w-4xl mx-auto
+		.meta
+			@apply flex items-center justify-center gap-4 text-sm text-gray-500 font-light uppercase tracking-wide
+			.separator
+				@apply text-gray-300
+
+	.blog-hero
+		@apply mb-10 lg:mb-16 rounded-sm overflow-hidden
+		.img-ratio
+			@apply w-full
+
+	.blog-content
+		@apply max-w-3xl mx-auto text-black/90 font-light text-lg leading-relaxed mb-10 lg:mb-16
+		p
+			@apply mb-6
+		.lead
+			@apply text-xl lg:text-2xl font-normal text-black mb-8 leading-normal
+		h2
+			@apply text-2xl lg:text-3xl font-bold font-secondary mb-6 mt-10
+		h3
+			@apply text-xl lg:text-2xl font-bold font-secondary mb-4 mt-8
+		blockquote
+			@apply border-l-4 border-black pl-6 py-2 my-8 italic text-xl lg:text-2xl font-secondary text-gray-700
+		ul, ol
+			@apply mb-6 pl-5 list-disc space-y-2 marker:text-gray-400
+		.content-image
+			@apply my-10
+			.img-ratio
+				@apply w-full mb-3
+			.caption
+				@apply text-sm text-gray-500 text-center italic
+
+	.blog-footer
+		@apply max-w-3xl mx-auto border-t border-b border-gray-200 py-6 mb-10 lg:mb-16 flex flex-col md:flex-row justify-between items-center gap-6
+		.tags
+			@apply flex items-center gap-2 text-sm
+			span
+				@apply font-bold uppercase tracking-wider text-gray-500
+			a
+				@apply text-black hover:text-gray-600 transition-colors
+				&:not(:last-child)::after
+					content: ","
+		.share
+			@apply flex items-center gap-4 text-sm
+			span
+				@apply font-bold uppercase tracking-wider text-gray-500
+			.social-links
+				@apply flex items-center gap-4
+				a
+					@apply w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-500 hover:bg-black hover:text-white hover:border-black transition-all duration-300
+
+	.blog-navigation
+		@apply max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6
+		.nav-link
+			@apply flex items-center gap-4 p-6 border border-gray-200 hover:border-black transition-all duration-300
+			i
+				@apply text-xl text-gray-400 transition-colors
+			&:hover
+				i
+					@apply text-black
+			.nav-content
+				@apply flex flex-col
+				.label
+					@apply text-xs font-bold tracking-widest text-gray-400 uppercase mb-1
+				.title
+					@apply text-base font-bold text-black line-clamp-1
+			
+			&.prev
+				@apply text-left
+			&.next
+				@apply text-right justify-end flex-row-reverse
+				.nav-content
+					@apply items-end
+
+.related-posts
+	.section-title
+		@apply text-2xl lg:text-3xl font-bold font-secondary text-center mb-10 uppercase tracking-wide
+	
+	.related-grid
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 gap-y-10
+	
+	// Reusing simplified card styles
+	.blog-card
+		@apply flex flex-col h-full bg-white relative border border-gray-200
+		.img-ratio
+			@apply w-full overflow-hidden relative
+			img
+				@apply w-full h-full object-cover transition-transform duration-700
+		&:hover
+			.img-ratio
+				img
+					@apply scale-105
+			.content
+				.title
+					@apply text-gray-600
+
+		.content
+			@apply px-4 py-5 flex flex-col flex-1 bg-white transition-colors duration-300
+			.category
+				@apply text-base font-normal tracking-[0.1em] text-gray-700 uppercase mb-3 leading-[1.3]
+			.title
+				@apply text-[18px] lg:text-[20px] font-medium mb-3 leading-[1.3] text-black transition-colors duration-300
+			.desc
+				@apply text-sm lg:text-base text-gray-500 font-light mb-6 line-clamp-3 leading-relaxed
+			.btn-view-more
+				@apply mt-auto flex items-center gap-2 text-base lg:text-[20px] font-normal tracking-[0.15em] uppercase hover:gap-4 transition-all duration-300 text-black

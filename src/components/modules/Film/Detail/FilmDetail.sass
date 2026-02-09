@@ -1,0 +1,42 @@
+
+.film-detail-page
+    .film-detail-top
+        @apply text-center mb-10 lg:mb-20
+        .film-title
+            @apply text-4xl lg:text-[64px] font-bold font-secondary uppercase leading-none
+
+    .film-detail-info
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-10 lg:mb-24 mx-auto
+        .col-left
+            .desc
+                @apply text-base lg:text-[18px] font-light leading-relaxed text-black/90
+                a
+                    @apply underline hover:text-gray-600 font-normal
+        .col-right
+            @apply space-y-8 lg:pl-20
+            .meta-group
+                @apply text-base lg:text-[18px] font-light
+                .label
+                    @apply font-normal mb-1
+                .value
+                    @apply leading-snug
+                a
+                    @apply underline hover:text-gray-600
+
+    .film-detail-video
+        @apply lg:px-10
+        .video-wrapper
+            @apply relative w-full
+            .img-ratio
+                @apply w-full h-full object-cover
+                
+            .play-button
+                @apply flex items-center justify-center aspect-square z-10
+                @apply sq-20 border-2 border-white rounded-full
+                @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-3xl cursor-pointer hover:scale-110 transition-transform duration-300
+            
+            video
+                @apply w-full h-full object-cover aspect-video outline-none
+            
+            .hidden
+                display: none !important

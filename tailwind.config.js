@@ -77,9 +77,10 @@ module.exports = {
 		container: {
 			center: true,
 			padding: {
-				DEFAULT: "15px",
-				md: "30px",
-				xl: "calc(20/1440*100rem)",
+				DEFAULT: "calc(16/1440*100rem)",
+				md: "calc(24/1440*100rem)",
+				lg: "calc(58/1440*100rem)",
+				xl: "calc(58/1440*100rem)",
 			},
 			screens: {
 				xs: "100vw",
@@ -278,6 +279,8 @@ module.exports = {
 			animation: {
 				"spin-circle": "rotateCircle 20s linear infinite",
 				"fade-in": "fadeIn 2s linear infinite",
+				"fade-in-down": "fadeInDown 2s linear infinite",
+				"fade-in-up": "fadeInUp 2s linear infinite",
 				spin: "spin 2s linear infinite",
 			},
 			backgroundImage: ({ theme }) => ({
@@ -448,6 +451,16 @@ module.exports = {
 					"0%": { opacity: "0" },
 					"50%": { opacity: "1" },
 					"100%": { opacity: "0" },
+				},
+				fadeInDown: {
+					"0%": { opacity: "0", transform: "translateY(-20px)" },
+					"50%": { opacity: "1", transform: "translateY(0)" },
+					"100%": { opacity: "0", transform: "translateY(20px)" },
+				},
+				fadeInUp: {
+					"0%": { opacity: "0", transform: "translateY(20px)" },
+					"50%": { opacity: "1", transform: "translateY(0)" },
+					"100%": { opacity: "0", transform: "translateY(-20px)" },
 				},
 				rotateCircle: {
 					"0%": { transform: "translate(-50%, -50%) rotate(0)" },

@@ -201,3 +201,16 @@ mixin WorkCard(data)
 
 mixin SpaceToTop(space)
 	.space-to-top(class=space)
+
+mixin Pagination(data)
+	.pagination(class="mt-base")
+		ul.pagination-list
+			li.pagination-item
+				a.pagination-link(href="#")
+					i.fa-sharp.fa-regular.fa-arrow-left
+			-for(var i = 0; i < data.length; i++)
+				li.pagination-item
+					a.pagination-link(href=data[i].href class=data[i].active ? "active" : "")= data[i].text
+			li.pagination-item
+				a.pagination-link(href="#")
+					i.fa-sharp.fa-regular.fa-arrow-right

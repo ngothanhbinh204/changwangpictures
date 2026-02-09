@@ -1,0 +1,129 @@
+
+- 
+	var artList = [
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[448_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[448_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[448_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[448_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[448_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[448_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+		{
+			src: './img/banner_1.png',
+			ratio: 'ratio:pt-[248_364]',
+			title: 'Kensuke Koike',
+			desc: 'Have you ever seen a family portrait that goes beyond a literal portrayal, reconstructing the subjects into a unique surreal composition that sparks new stories through our imagination?',
+			link: 'DISCOVER MORE'
+		},
+	]
+
+
++SpaceToTop('space-header')
+section.art-page.section-py
+	.container-fluid
+		.art-intro
+			h1.title-32.font-normal Conversations around 
+				span.italic art, design & beauty 
+				| with artists pivotal to the creative innovation of the industry
+		
+		.art-list
+			each item, index in artList
+				a.art-item(href="#" class=`art-item-${index + 1}`)
+					.img-ratio(class=item.ratio)
+						+PugImg(item.src)
+					.art-overlay
+						.content
+							h3.title.italic!= item.title
+							p.desc!= item.desc
+							span.btn-linkFiles!= item.link

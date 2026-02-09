@@ -1,0 +1,56 @@
+.film-list-page
+	.film-item
+		@apply relative overflow-hidden mb-6
+		
+		//- Background Image with Ratio
+		.film-bg
+			.img-ratio
+				@apply w-full h-full
+				img
+					@apply w-full h-full object-cover transition-transform duration-700 ease-out
+			
+			//- Optional Overlay for better text readability
+			.film-overlay
+				@apply absolute inset-0 bg-black/20 z-10 pointer-events-none transition-opacity duration-500
+
+		//- Content Layer
+		.film-content
+			@apply absolute inset-0 z-20 flex flex-col justify-end pb-8 lg:pb-14
+			.container
+				@apply w-full
+			.content-wrapper
+				@apply flex flex-col md:flex-row justify-between items-end gap-6
+				
+				//- Left Column: Title and Meta Info
+				.info-col
+					@apply text-white
+					.film-title
+						@apply font-secondary font-bold text-4xl md:text-5xl lg:text-[52px] uppercase mb-3 md:mb-4 leading-[1.1]
+					.film-meta
+						@apply text-sm md:text-base font-light space-y-1
+						p
+							@apply leading-snug
+
+				//- Right Column: Action Button
+				.action-col
+					.btn-view-more
+						@apply inline-flex items-center gap-3 text-white uppercase tracking-widest text-sm md:text-base font-normal cursor-pointer transition-all duration-300
+						.text
+							@apply border-b border-transparent transition-all duration-300
+						.icon
+							@apply transition-transform duration-300
+
+		//- Hover Effects
+		&:hover
+			.film-bg
+				.img-ratio
+					img
+						@apply scale-105
+			.film-overlay
+				@apply bg-black/40
+			.film-content
+				.btn-view-more
+					.text
+						@apply border-white
+					.icon
+						@apply translate-x-2

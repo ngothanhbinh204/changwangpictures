@@ -62,7 +62,83 @@ $(document).ready(function () {
 	setTimeout(() => {
 		AOS.refresh();
 	}, 1000);
+
+	initVideoPopup();
 });
+
+
+function initVideoPopup() {
+	const popup = document.getElementById('video-popup');
+	if (!popup) return;
+
+	const closeBtn = popup.querySelector('.close-popup');
+	const triggerBtns = document.querySelectorAll('.play-button');
+	const videoContainer = popup.querySelector('.video-container');
+	const video = popup.querySelector('video');
+	const source = video.querySelector('source');
+	const thumbItems = popup.querySelectorAll('.video-thumb-item');
+	const playBtnPopup = popup.querySelector('.btn-play-popup');
+	const overlayTitle = popup.querySelector('.overlay-title');
+
+	// Helper to reset state
+	const resetVideoState = (src, title) => {
+		videoContainer.classList.remove('is-playing');
+		video.pause();
+		video.currentTime = 0;
+		if (src) source.src = src;
+		video.load();
+		if (title && overlayTitle) overlayTitle.textContent = title;
+	};
+
+	// Open Popup
+	if (triggerBtns) {
+		triggerBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const src = "https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_15000kbps_1080p_60.0fps_h264.mp4";
+				// Reset state -> Show overlay, don't auto play
+				resetVideoState(src, "LUNA LOPEZ");
+				
+				popup.classList.add('active');
+				document.body.style.overflow = 'hidden';
+			});
+		});
+	}
+
+	// Close Popup
+	if (closeBtn) {
+		closeBtn.addEventListener('click', () => {
+			popup.classList.remove('active');
+			video.pause();
+			videoContainer.classList.remove('is-playing');
+			document.body.style.overflow = '';
+		});
+	}
+
+	// Play from Overlay Button
+	if (playBtnPopup) {
+		playBtnPopup.addEventListener('click', () => {
+			videoContainer.classList.add('is-playing');
+			video.play();
+		});
+	}
+
+	// Switch Video from Thumbnail
+	if (thumbItems) {
+		thumbItems.forEach(item => {
+			item.addEventListener('click', () => {
+				const newSrc = item.getAttribute('data-src');
+				const newTitle = item.getAttribute('data-title');
+
+				// Reset state -> show overlay with new title
+				resetVideoState(newSrc, newTitle);
+
+				// Update Side Info (Mock update)
+				const titleEl = popup.querySelector('.video-title');
+				if (titleEl) titleEl.textContent = newTitle;
+			});
+		});
+	}
+}
 
 
 // function getHeightChild() {

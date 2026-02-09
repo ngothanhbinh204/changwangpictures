@@ -1,0 +1,37 @@
+
+.space-header
+	@apply pt-[80px] lg:pt-[100px]
+
+.about-page
+	.about-founders
+		@apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-x-16 mb-10 lg:mb-15
+		.founder-item
+			.img-ratio
+				@apply w-full mb-6
+				img
+					@apply w-full h-full object-cover filter grayscale
+			.founder-info
+				@apply text-base lg:text-lg leading-[1.2] text-black/90 font-light 
+				strong
+					@apply font-bold text-black
+
+	.about-team
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5
+		.team-item
+			@apply border border-gray-200
+			.img-ratio
+				@apply w-full overflow-hidden
+				img
+					@apply w-full h-full object-cover filter grayscale
+			.content
+				@apply px-4 py-5
+				.name
+					@apply text-lg font-bold mb-1 text-black 
+				.email
+					@apply relative flex items-center gap-2 text-sm text-gray-700 mb-7.5 hover:text-black transition-colors
+					i
+						@apply text-xs
+					&::after
+						@apply content-[''] absolute left-0 -bottom-3.5 w-20 h-[1px] bg-gray-300
+				.desc
+					@apply text-xs lg:text-sm text-gray-500 font-normal leading-1.4 text-justify space-y-4 pr-2

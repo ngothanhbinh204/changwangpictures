@@ -1,0 +1,59 @@
+
++SpaceToTop('space-header')
+section.film-detail-page.section-py
+    .container.max-w-full
+        .film-detail-top
+            h1.film-title THE BLACK CAT
+        
+        .film-detail-info
+            .col-left
+                .desc 
+                    p Set against the backdrop of a simmering post-millennium summer, SUMMER SCHOOL, 2001 is a poignant exploration of displacement and the fragile architecture of family. After years of separation, a teenage boy returns to his family in Czechia, carrying the invisible scars of his time in Vietnam. His homecoming, however, is far from a simple reunion.
+                    br
+                    p He finds himself a stranger in his own home, navigating the cold distance of a father he barely knows, the desperate, stifling love of a mother trying to erase the past, and a younger brother who has grown comfortable in the space he left behind. As a chaotic summer reaches its breaking point, an unexpected accident forces the family to confront their buried resentments. In the ruins of their ideal image, they discover that true healing doesn't come from fixing the cracks, but from finally acknowledging they exist.
+                    br
+                    p Follow our #[a(href="#") IG Profile] to see more updates!
+
+            .col-right
+                .meta-group
+                    h3.label Feature Film
+                    p.value Director: Auralie Chang
+                    p.value DP: Auralie Chang
+                    p.value Produced by Auralie Chang & Wang
+
+                .meta-group
+                    p.value Genre: Drama
+                    p.value Duration: 110 minutes
+
+                .meta-group
+                    p.value World Premiere: #[a(href="#") KVFF 2025]
+
+                .meta-group
+                    p.value Selected Interviews: #[a(href="#") Lorem Impsum]
+
+        .film-detail-video
+            .video-wrapper(data-src="https://avtshare01.rz.tu-ilmenau.de/avt-vqdb-uhd-1/test_1/segments/bigbuck_bunny_8bit_15000kbps_1080p_60.0fps_h264.mp4")
+                .img-ratio(class="ratio:pt-[616_1100]")
+                    +PugImg("./img/banner_1.png")
+                    .play-button
+                         i.fa-solid.fa-play
+                video.hidden(controls playsinline)
+                    source(src="" type="video/mp4")
+
+    script.
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoWrapper = document.querySelector('.video-wrapper');
+            if(videoWrapper) {
+                const playBtn = videoWrapper.querySelector('.play-button');
+                const video = videoWrapper.querySelector('video');
+                const imgRatio = videoWrapper.querySelector('.img-ratio');
+                const src = videoWrapper.getAttribute('data-src');
+
+                playBtn.addEventListener('click', () => {
+                    imgRatio.classList.add('hidden');
+                    video.classList.remove('hidden');
+                    video.src = src;
+                    video.play();
+                });
+            }
+        });
