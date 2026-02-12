@@ -52,7 +52,7 @@ $(document).ready(function () {
 
 	setTimeout(() => {
 		AOS.init({
-			offset: 80,
+			offset: 200,
 			once: true,
 			disable: function () {
 				return window.innerWidth < 1200;
@@ -64,7 +64,80 @@ $(document).ready(function () {
 	}, 1000);
 
 	initVideoPopup();
+	initBlogFilter();
 });
+
+
+function initBlogFilter() {
+	const $tabs = $('.blog-tabs .tab-item');
+	const $container = $('.blog-list');
+
+	if ($tabs.length > 0 && $container.length > 0 && window.blogListData) {
+		const renderItems = (filter) => {
+			const filteredData = filter === 'all' 
+				? window.blogListData 
+				: window.blogListData.filter(item => item.category === filter);
+
+			let html = '';
+			filteredData.forEach((item, index) => {
+				const isExpand = index % 4 === 0;
+				const cardClass = isExpand ? 'blog-card is-expand' : 'blog-card';
+				const ratioClass = isExpand ? 'ratio:pt-[529_652]' : 'ratio:pt-[272_315]';
+
+				html += `
+					<div class="${cardClass}" data-category="${item.category}" data-aos="fade-up" data-aos-delay="${(index % 4) * 100}">
+						<div class="img-ratio ${ratioClass}">
+							<img data-src="${item.img}" alt="" class="lozad">
+						</div>
+						<div class="content">
+							<div class="category">${item.category}</div>
+							<h3 class="title">
+								<a href="./BlogDetail.html">${item.title}</a>
+							</h3>
+							<div class="desc">
+								<p>${item.desc}</p>
+							</div>
+							<a class="btn-view-more" href="./BlogDetail.html">
+								<span>VIEW MORE</span>
+								<i class="fa-regular fa-arrow-right-long"></i>
+							</a>
+						</div>
+					</div>
+				`;
+			});
+
+			// Fade out current items, update content, and fade in
+			$container.fadeOut(300, function() {
+				$container.html(html);
+				$container.fadeIn(300);
+
+				// Initialize Lozad for new images
+				if (window.lozad) {
+					window.lozad.observe();
+				}
+
+				// Refresh AOS
+				setTimeout(() => {
+					if (window.AOS) {
+						window.AOS.refresh();
+					}
+				}, 200);
+			});
+		};
+
+		$tabs.on('click', function (e) {
+			e.preventDefault();
+			const filter = $(this).attr('data-filter');
+
+			if ($(this).hasClass('active')) return;
+
+			$tabs.removeClass('active');
+			$(this).addClass('active');
+
+			renderItems(filter);
+		});
+	}
+}
 
 
 function initVideoPopup() {

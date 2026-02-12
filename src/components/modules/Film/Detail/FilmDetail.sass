@@ -3,19 +3,19 @@
     .film-detail-top
         @apply text-center mb-10 lg:mb-20
         .film-title
-            @apply text-4xl lg:text-[64px] font-bold font-secondary uppercase leading-none
+            @apply text-4xl lg:text-[64px] font-normal font-secondary uppercase leading-none
 
     .film-detail-info
-        @apply grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-10 lg:mb-24 mx-auto
+        @apply grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-10 lg:mb-18 mx-auto
         .col-left
             .desc
-                @apply text-base lg:text-[18px] font-light leading-relaxed text-black/90
+                @apply text-base lg:text-[18px] font-normal leading-relaxed text-gray-900
                 a
                     @apply underline hover:text-gray-600 font-normal
         .col-right
             @apply space-y-8 lg:pl-20
             .meta-group
-                @apply text-base lg:text-[18px] font-light
+                @apply text-base lg:text-[18px] font-normal
                 .label
                     @apply font-normal mb-1
                 .value
@@ -24,7 +24,7 @@
                     @apply underline hover:text-gray-600
 
     .film-detail-video
-        @apply lg:px-10
+        @apply lg:px-12
         .video-wrapper
             @apply relative w-full
             .img-ratio

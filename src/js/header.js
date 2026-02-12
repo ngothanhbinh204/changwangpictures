@@ -6,6 +6,7 @@ import { detectCloseElement } from "./helper";
  */
 const vw = $(window).width();
 export const header = {
+	lastScroll: 0,
 	scrollActive: function () {
 		let height = $("header").height();
 		if ($(window).scrollTop() > height) {
@@ -13,6 +14,18 @@ export const header = {
 		} else {
 			$("header").removeClass("active");
 		}
+	},
+	scrollDirection: function () {
+		let st = $(window).scrollTop();
+		if (st > header.lastScroll && st > 100) {
+			$("header").addClass("scrolldown").removeClass("scrollup");
+		} else if (st < header.lastScroll) {
+			$("header").addClass("scrollup").removeClass("scrolldown");
+		}
+		if (st <= 0) {
+			$("header").removeClass("scrolldown scrollup");
+		}
+		header.lastScroll = st;
 	},
 	mobile: function () {
 		$(".header-bar").on("click", function () {
@@ -65,6 +78,7 @@ export const header = {
 	init: function () {
 		headerSearch();
 		header.scrollActive();
+		header.scrollDirection();
 		header.mobile();
 		header.initVariable();
 	},
@@ -73,6 +87,7 @@ document.addEventListener(
 	"scroll",
 	function (e) {
 		header.scrollActive();
+		header.scrollDirection();
 	},
 	true
 );

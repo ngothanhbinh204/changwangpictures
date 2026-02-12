@@ -1,15 +1,15 @@
 +SpaceToTop('space-header')
-section.about-page.section-py
+section.about-page
 	.container.max-w-full
 		//- Founders Section
 		.about-founders
-			.founder-item
+			.founder-item(data-aos="fade-up")
 				.img-ratio(class="ratio:pt-[1_1]")
 					+PugImg("./img/banner_1.png")
 				.founder-info
 					p #[strong Chang] (Trang) is a #[strong finance specialist] but have the fire of art inside her. She is the #[strong producer] of the studio, but also the #[strong model, photographer, editor] sometime #[strong makeup artist], sometime #[strong stylist] :D
 
-			.founder-item
+			.founder-item(data-aos="fade-up" data-aos-delay="200")
 				.img-ratio(class="ratio:pt-[1_1]")
 					+PugImg("./img/banner_1.png")
 				.founder-info
@@ -17,8 +17,8 @@ section.about-page.section-py
 
 		//- Team Section
 		.about-team
-			- for(var i = 1; i <= 4; i++)
-				.team-item
+			- for(var i = 0; i < 4; i++)
+				.team-item(data-aos="fade-up" data-aos-delay=(i * 200))
 					.img-ratio(class="ratio:pt-[336_336]")
 						+PugImg("./img/banner_1.png")
 					.content

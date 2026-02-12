@@ -8,49 +8,48 @@
 			img: './img/banner_1.png'
 		},
 		{
-			title: 'A global creative studio based in Saigon, Vietnam',
+			title: 'A global creative studio based in design trends',
+			category: 'BLOGS',
+			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			img: './img/banner_1.png'
+		},
+		{
+			title: 'A global creative studio based in technology',
 			category: 'MAGAZINES',
 			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			img: './img/banner_1.png'
 		},
 		{
-			title: 'A global creative studio based in Saigon, Vietnam',
+			title: 'A global creative studio based in art',
+			category: 'BLOGS',
+			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+			img: './img/banner_1.png'
+		},
+		{
+			title: 'A global creative studio based in culture',
 			category: 'MAGAZINES',
 			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			img: './img/banner_1.png'
 		},
 		{
-			title: 'A global creative studio based in Saigon, Vietnam',
-			category: 'MAGAZINES',
+			title: 'A global creative studio based in photography',
+			category: 'BLOGS',
 			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 			img: './img/banner_1.png'
 		},
-		{
-			title: 'A global creative studio based in Saigon, Vietnam',
-			category: 'MAGAZINES',
-			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			img: './img/banner_1.png'
-		},
-		{
-			title: 'A global creative studio based in Saigon, Vietnam',
-			category: 'MAGAZINES',
-			desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			img: './img/banner_1.png'
-		},
-		// Repeat items to demonstrate 4-item spacing logic
 	]
 
 mixin BlogCard(item, isExpand)
-	.blog-card(class=isExpand ? 'is-expand' : '')
+	.blog-card(class=(isExpand ? 'is-expand' : '') data-category=item.category data-aos="fade-up")
 		.img-ratio(class=isExpand ? 'ratio:pt-[529_652]' : 'ratio:pt-[272_315]')
 			+PugImg(item.img)
 		.content
 			.category= item.category
 			h3.title
-				a(href="#")= item.title
+				a(href="./BlogDetail.html")= item.title
 			.desc
 				p= item.desc
-			a.btn-view-more(href="#")
+			a.btn-view-more(href="./BlogDetail.html")
 				span VIEW MORE
 				i.fa-regular.fa-arrow-right-long
 
@@ -58,34 +57,29 @@ mixin BlogCard(item, isExpand)
 section.blog-page.section-py
 	.blog-tabs
 		.container.max-w-full.blog-tabs-inner
-			.tab-item.active
-				a(href="#") ALL
-			.tab-item
-				a(href="#") MAGAZINES
-			.tab-item
-				a(href="#") BLOGS
+			.tab-item.active(data-filter="all")
+				a(href="javascript:;") ALL
+			.tab-item(data-filter="MAGAZINES")
+				a(href="javascript:;") MAGAZINES
+			.tab-item(data-filter="BLOGS")
+				a(href="javascript:;") BLOGS
 	.container.max-w-full
 		//- Blog Grid
 		.blog-list
-			//- Logic to create expand item every 4 items
-			//- Pattern: Expand - Normal - Normal | Normal - Expand - Normal | Normal - Normal - Expand ?
-			//- Based on image: 
-			//- Row 1: Expand (2 cols) | Normal (1 col) | Normal (1 col) -> Total 3 items displayed as 2+1+1 width
-			//- Or maybe simply: Index 0 is Expand. Index 1, 2 are normal.
-			//- The prompt says: "Logic hiển thị các item blog expand, cách nhau 4 item thì item đầu tiên sẽc có UI exapnd"
-			//- So user means: Item 1 (idx 0), Item 5 (idx 4), Item 9 (idx 8) are expanded.
-			
 			each item, index in blogList
 				if index % 4 == 0
 					+BlogCard(item, true)
 				else
 					+BlogCard(item, false)
 
+	script.
+		window.blogListData = !{JSON.stringify(blogList)}
+
 		//- Pagination
-		+Pagination([
-			{ text: '1', href: '#', active: true },
-			{ text: '2', href: '#' },
-			{ text: '3', href: '#' },
-			{ text: '...', href: '#' },
-			{ text: '10', href: '#' },
-		])
+		//- +Pagination([
+		//- 	{ text: '1', href: '#', active: true },
+		//- 	{ text: '2', href: '#' },
+		//- 	{ text: '3', href: '#' },
+		//- 	{ text: '...', href: '#' },
+		//- 	{ text: '10', href: '#' },
+		//- ])

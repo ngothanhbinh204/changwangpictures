@@ -10,7 +10,7 @@
 					ratio: "ratio:pt-[428_652]", // Landscape approx
 					gallery: [
 						{ src: "./img/banner_1.png" },
-						{ src: "./img/banner_1.png" },
+						{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
 					]
 				}
 			]
@@ -24,7 +24,7 @@
 					subTitle: "Travel Stories // Tuyen Lam Lakes",
 					ratio: "ratio:pt-[428_652]", // Landscape approx
 					gallery: [
-						{ src: "./img/banner_1.png" },
+						{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
 						{ src: "./img/banner_1.png" },
 					]
 				}
@@ -40,6 +40,16 @@
 			ratio: "ratio:pt-[606_428]", // Portrait
 			gallery: [
 				{ src: "./img/banner_1.png" },
+				{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
+			]
+		},
+		{
+			title: "Federico Cina",
+			desc: "Creative direction and content production for his SS25 Fashion Show at Milan Fashion Week.",
+			subTitle: "Travel Stories // Tuyen Lam Lakes",
+			ratio: "ratio:pt-[606_428]", // Portrait
+			gallery: [
+				{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
 				{ src: "./img/banner_1.png" },
 			]
 		},
@@ -59,8 +69,8 @@
 			subTitle: "Travel Stories // Tuyen Lam Lakes",
 			ratio: "ratio:pt-[606_428]", // Portrait
 			gallery: [
-				{ src: "./img/banner_1.png" },
-				{ src: "./img/banner_1.png" },
+				{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
+				{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
 			]
 		},
 		{
@@ -70,7 +80,7 @@
 			ratio: "ratio:pt-[606_428]", // Portrait
 			gallery: [
 				{ src: "./img/banner_1.png" },
-				{ src: "./img/banner_1.png" },
+				{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
 			]
 		},
 		{
@@ -80,14 +90,14 @@
 			ratio: "ratio:pt-[606_428]", // Portrait
 			gallery: [
 				{ src: "./img/banner_1.png" },
-				{ src: "./img/banner_1.png" },
+				{ type: 'video', src: "./img/video-demo-card-mini.mp4" },
 			]
 		}
 	]
 .space-to-top
 section.work-page.section-py
 	.work-intro.container.max-w-full
-		h1.title-42.font-normal Changwang creates multi-dimensional works;
+		h1.title-42.font-normal(data-aos="fade-up") Changwang creates multi-dimensional works;
 				br
 				| From campaigns and full service production,
 				br
@@ -96,12 +106,22 @@ section.work-page.section-py
 				| — shaped by insight, ideas & artistry.
 
 		.work-promo
-			each col in workPromo
-				.item
-					h2.title-40.font-bold!= col.category
+			each col, index in workPromo
+				.item(data-aos="fade-up" data-aos-delay=(index * 150))
+					a.title-40.category-title(href="#")!= col.category
 					each item in col.items
 						+WorkCard(item)
 
 		.work-list
-			each item in workList
-				+WorkCard(item)
+			each item, index in workList
+				.work-item(data-aos="fade-up" data-aos-delay=(index % 3 * 100))
+					+WorkCard(item)
+
+		//- Pagination
+		//- +Pagination([
+		//- 	{ text: '1', href: '#', active: true },
+		//- 	{ text: '2', href: '#' },
+		//- 	{ text: '3', href: '#' },
+		//- 	{ text: '...', href: '#' },
+		//- 	{ text: '10', href: '#' },
+		//- ])

@@ -6,7 +6,7 @@ mixin subscribeForm()
 				.btn-submit 
 					span Gửi 
 					.icon 
-						<i class="fa-solid fa-chevron-right"></i>
+						<i class="fa-regular fa-chevron-right"></i>
 mixin PugImg(url="./img/1.jpg")
 	img(data-src=url, alt="", class="lozad " + attributes.class)
 mixin InputDate()
@@ -186,14 +186,15 @@ mixin WorkCard(data)
 							.swiper-slide
 								.img-ratio(class=data.ratio || "ratio:pt-[704_520]")
 									if item.type == 'video'
-										video(src=item.src muted playsinline loop)
+										video(preload="auto" loop playsinline webkit-playsinline x5-playsinline style="width: 100%; height: 100%;" autoplay muted)
+											source(src=item.src type="video/mp4")
 									else
 										+PugImg(item.src)
 			.swiper-nav-custom
 				.btn-prev
-					i.fa-sharp.fa-regular.fa-arrow-left
+					i.fa-regular.fa-arrow-left-long
 				.btn-next
-					i.fa-sharp.fa-regular.fa-arrow-right
+					i.fa-regular.fa-arrow-right-long
 		.work-content
 			h3.title!= data.title
 			p.desc!= data.desc
@@ -207,10 +208,35 @@ mixin Pagination(data)
 		ul.pagination-list
 			li.pagination-item
 				a.pagination-link(href="#")
-					i.fa-sharp.fa-regular.fa-arrow-left
+					i.fa-regular.fa-arrow-left-long
 			-for(var i = 0; i < data.length; i++)
 				li.pagination-item
 					a.pagination-link(href=data[i].href class=data[i].active ? "active" : "")= data[i].text
 			li.pagination-item
 				a.pagination-link(href="#")
-					i.fa-sharp.fa-regular.fa-arrow-right
+					i.fa-regular.fa-arrow-right-long
+
+mixin ButtonPrimary(text="")
+	a(href="#" class='btn-primary btn ' + attributes.class)
+		span=text
+
+mixin btnArrow(text="SEE MORE")
+	a.btn.btn-arrow(href="#")&attributes(attributes)
+		span=text
+		i.fa-regular.fa-arrow-right-long
+
+mixin btnArrowWhite(text="SEE MORE")
+	a.btn.btn-arrow-white(href="#")&attributes(attributes)
+		span=text
+		i.fa-regular.fa-arrow-right-long
+
+mixin btnArrowLine(text="CONTACT")
+	a.btn.btn-arrow-line(href="#")&attributes(attributes)
+		span=text
+		i.fa-regular.fa-arrow-right-long
+		
+mixin btnArrowLineWhite(text="CONTACT")
+	a.btn.btn-arrow-line-white(href="#")&attributes(attributes)
+		span=text
+		i.fa-regular.fa-arrow-right-long
+		

@@ -1,56 +1,48 @@
 .film-list-page
 	.film-item
-		@apply relative overflow-hidden mb-6
+		@apply relative overflow-hidden mb-6 cursor-pointer
 		
-		//- Background Image with Ratio
+		// Background Image with Ratio
 		.film-bg
 			.img-ratio
 				@apply w-full h-full
 				img
-					@apply w-full h-full object-cover transition-transform duration-700 ease-out
+					@apply w-full h-full object-cover transition-all duration-[1500ms] ease-out
 			
-			//- Optional Overlay for better text readability
+			// Optional Overlay for better text readability
 			.film-overlay
-				@apply absolute inset-0 bg-black/20 z-10 pointer-events-none transition-opacity duration-500
+				@apply absolute inset-0 bg-black/30 z-10 pointer-events-none transition-all duration-500
 
-		//- Content Layer
+		// Content Layer
 		.film-content
 			@apply absolute inset-0 z-20 flex flex-col justify-end pb-8 lg:pb-14
 			.container
 				@apply w-full
 			.content-wrapper
-				@apply flex flex-col md:flex-row justify-between items-end gap-6
+				@apply flex flex-col md:flex-row justify-between md:items-end gap-6
 				
-				//- Left Column: Title and Meta Info
+				// Left Column: Title and Meta Info
 				.info-col
-					@apply text-white
+					@apply text-white transition-all duration-500
 					.film-title
-						@apply font-secondary font-bold text-4xl md:text-5xl lg:text-[52px] uppercase mb-3 md:mb-4 leading-[1.1]
+						@apply font-secondary font-normal text-4xl md:text-5xl rem:lg:text-[52px] uppercase mb-3 md:mb-4 leading-[1.1]
 					.film-meta
 						@apply text-sm md:text-base font-light space-y-1
 						p
 							@apply leading-snug
 
-				//- Right Column: Action Button
+				// Right Column: Action Button
 				.action-col
-					.btn-view-more
-						@apply inline-flex items-center gap-3 text-white uppercase tracking-widest text-sm md:text-base font-normal cursor-pointer transition-all duration-300
-						.text
-							@apply border-b border-transparent transition-all duration-300
-						.icon
-							@apply transition-transform duration-300
+					@apply text-white
 
-		//- Hover Effects
+		// Hover Effects
 		&:hover
 			.film-bg
 				.img-ratio
 					img
-						@apply scale-105
+						@apply scale-110
 			.film-overlay
-				@apply bg-black/40
+				@apply bg-black/50
 			.film-content
-				.btn-view-more
-					.text
-						@apply border-white
-					.icon
-						@apply translate-x-2
+				.info-col
+					@apply translate-x-4

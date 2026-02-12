@@ -3,6 +3,7 @@
 	@apply pt-[80px] lg:pt-[100px]
 
 .about-page
+	@apply pt-10 lg:pt-15 pb-20 lg:pb-30
 	.about-founders
 		@apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-x-16 mb-10 lg:mb-15
 		.founder-item
@@ -34,4 +35,4 @@
 					&::after
 						@apply content-[''] absolute left-0 -bottom-3.5 w-20 h-[1px] bg-gray-300
 				.desc
-					@apply text-xs lg:text-sm text-gray-500 font-normal leading-1.4 text-justify space-y-4 pr-2
+					@apply text-xs lg:text-sm text-gray-500 font-normal leading-1.4 space-y-4 pr-2

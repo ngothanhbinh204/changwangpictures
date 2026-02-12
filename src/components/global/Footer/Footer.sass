@@ -1,5 +1,5 @@
 .footer
-	@apply bg-Primary-1 pt-12 pb-12 xl:pt-20 xl:pb-20 text-white
+	@apply bg-Primary-1 pt-6 pb-3 xl:pt-9 xl:pb-4 text-white
 	.container-fluid
 		@apply px-4 xl:px-10
 	
@@ -11,23 +11,25 @@
 			@apply lg:col-span-5 flex flex-col gap-14 order-2 lg:order-1
 			
 			.footer-group
-				@apply flex flex-col gap-2
+				@apply flex flex-col gap-4 lg:gap-5.5
 				.label
-					@apply text-xs md:text-sm text-white/50 uppercase mb-1
+					@apply text-xs md:text-sm text-white/50 uppercase 
 				a, p
 					@apply text-sm md:text-base font-normal text-white uppercase leading-normal
 				a
-					@apply transition-colors hover:text-white/70 block
+					@apply transition-colors  block
 			
 			.social-list
-				@apply flex items-center gap-4 flex-wrap
+				@apply flex items-center gap-y-4 flex-wrap
 				li
 					position: relative
+					@apply flex flex-row items-center
 					&:not(:last-child)::after
-						content: "•"
-						@apply mx-2 text-white/50
+						content: ""
+						@apply inline-block sq-1 flex-shrink-0
+						@apply mx-3 bg-white rounded-full
 					a
-						@apply text-xs md:text-sm font-normal uppercase tracking-wider text-white hover:text-white/70
+						@apply text-xs md:text-sm font-normal uppercase tracking-wider text-white 
 
 		// Right Column
 		.footer-right
@@ -36,7 +38,7 @@
 				@apply text-xs md:text-sm text-white/50 uppercase mb-8
 			
 			.footer-form
-				@apply flex flex-col gap-18
+				@apply flex flex-col space-y-9 lg:space-y-18
 				.form-row
 					@apply grid grid-cols-1 md:grid-cols-2 gap-9
 				
@@ -47,7 +49,15 @@
 						@apply text-sm
 						@apply focus:border-white focus:outline-none placeholder-white/40
 						@apply transition-colors
+					textarea
+						@apply w-full bg-transparent border-b border-white/20 pb-4 text-white uppercase
+						@apply text-sm h-20 resize-none
+						@apply focus:border-white focus:outline-none placeholder-white/40
+						@apply transition-colors
 				
 				.btn-submit
-					@apply mt-6 w-full md:w-auto px-12 py-4 bg-[#222] text-white uppercase font-normal tracking-widest
+					@apply mt-6 w-full md:w-auto px-12 py-3 bg-[#1E1E1E] text-white uppercase font-normal tracking-widest rounded-2
 					@apply border border-transparent hover:bg-white hover:text-black transition-all duration-300
+
+.group-mails
+	@apply flex flex-col gap-2.5

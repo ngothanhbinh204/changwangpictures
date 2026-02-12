@@ -258,14 +258,14 @@ module.exports = {
 					"white": "#ffffff",
 					"gray-50": "#f6f6f6",
 					"gray-100": "#efefef",
-					"gray-200": "#dcdcdc",
-					"gray-300": "#bdbdbd",
+					"gray-200": "rgba(204,204,204,1)",
+					"gray-300": "rgba(174,174,174,1)",
 					"gray-400": "#989898",
-					"gray-500": "#818181",
+					"gray-500": "rgba(103,103,103,1)",
 					"gray-600": "#656565",
-					"gray-700": "#383B45",
+					"gray-700": "rgba(56,59,69,1)",
 					"gray-800": "#464646",
-					"gray-900": "#3d3d3d",
+					"gray-900": "rgba(10,10,10,1)",
 					"gray-950": "#0A0A0A",
 					"black": "#000000",
 					"Error-1": "#e30e00",
@@ -284,7 +284,7 @@ module.exports = {
 				spin: "spin 2s linear infinite",
 			},
 			backgroundImage: ({ theme }) => ({
-				"linear-1": `linear-gradient(90deg, #181830 -0.01%, #1D1D38 19.26%, #141228 40.12%, #2C223A 75.47%, #231B33 99.98%)`,
+				"linear-1": `linear-gradient(90deg, #181830 -0.01%, #1D1D38 14.46%, #141228 40.12%, #2C223A 75.47%, #231B33 99.98%)`,
 			}),
 			backgroundPosition: {
 				"pos-100-0": "100% 0%",
@@ -516,14 +516,14 @@ module.exports = {
 					},
 				},
 				".heading-1": {
-					fontWeight: "600",
+					fontWeight: "400",
 					lineHeight: "1.25",
 					fontSize: "calc(36/1440*100rem)", // 4xl
 					[`@media (min-width: ${theme("screens.md")})`]: {
-						fontSize: "calc(36/1440*100rem)", // still 4xl
+						fontSize: "calc(42/1440*100rem)", // still 4xl
 					},
 					[`@media (min-width: ${theme("screens.xl")})`]: {
-						fontSize: "calc(48/1440*100rem)", // 6xl
+						fontSize: "calc(52/1440*100rem)", // 6xl
 					},
 				},
 				".heading-88": {
@@ -649,7 +649,13 @@ module.exports = {
 				".title-28": {
 					fontSize: "20px",
 					[`@media (min-width: ${theme("screens.lg")})`]: {
-						fontSize: `${28 / 19.2}rem`, // rem:text-[28px]
+						fontSize: `${28 / 14.4}rem`, // rem:text-[28px]
+					},
+				},
+				".title-26": {
+					fontSize: "20px",
+					[`@media (min-width: ${theme("screens.lg")})`]: {
+						fontSize: `${26 / 14.4}rem`, // rem:text-[26px]
 					},
 				},
 
@@ -830,7 +836,7 @@ module.exports = {
 		}),
 		plugin(({ addVariant, e }) => {
 			addVariant("rem", ({ container, separator }) => {
-				const rootFontSize = 19.2; // This is your HTML root font-size
+				const rootFontSize = 14.4; // This is your HTML root font-size
 				container.walkRules((rule) => {
 					rule.selector = `.${e(`rem${separator}`)}${rule.selector.slice(1)}`;
 					rule.walkDecls((decl) => {
@@ -848,7 +854,7 @@ module.exports = {
 		}),
 		plugin(({ addVariant, e }) => {
 			addVariant("em", ({ container, separator }) => {
-				const rootFontSize = 19.2; // This is your HTML root font-size
+				const rootFontSize = 14.4; // This is your HTML root font-size
 				container.walkRules((rule) => {
 					rule.selector = `.${e(`em${separator}`)}${rule.selector.slice(1)}`;
 					rule.walkDecls((decl) => {
@@ -863,7 +869,7 @@ module.exports = {
 		}),
 		plugin(({ addVariant, e }) => {
 			addVariant("clampRem", ({ container, separator }) => {
-				const rootFontSize = 19.2; // This is your HTML root font-size
+				const rootFontSize = 14.4; // This is your HTML root font-size
 				container.walkRules((rule) => {
 					rule.selector = `.${e(`clampRem${separator}`)}${rule.selector.slice(1)}`;
 					rule.walkDecls((decl) => {

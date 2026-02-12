@@ -3,67 +3,67 @@ section.art-detail-page.section-py
 	.container.max-w-full
 		//- Top Intro Section
 		.art-detail-top
-			.col-img
+			.col-img(data-aos="fade-right")
 				.img-ratio.ratio-portrait
 					+PugImg("./img/banner_1.png")
-			.col-content
+			.col-content(data-aos="fade-left" data-aos-delay="200")
 				h1.title Luna Lopez
 				p.subtitle PHOTOGRAPHER AURALIE CHANG
 				p.desc Navigating the intersection of Body Expression with Luna Lopez.
 
 		//- Quote Section
-		.art-detail-quote
+		.art-detail-quote(data-aos="fade-up")
 			h2.quote-text I use the medium to #[span.italic process] and #[span.italic communicate] an #[span.italic emotional] state, that I otherwise can find hard to #[span.italic deal] with.
 			.quote-desc
-				p In our exploration of Luna Lopez's artistic vision, we encountered a masterful navigation of the nuanced interplay between intimacy and violence. Luna gracefully unveils her creative process, illuminating the deliberate juxtaposition of contrasting elements within her photographs. Through her adept manipulation of these dichotomies, Luna invites viewers to engage in a profound reflection on the intricate layers of human emotion and experience.
+				p In our exploration of Luna Lopez's artistic vision, we encountered a masterful navigation of the nuanced interplay between intimacy and violence. Luna gracefully unveils her creative process, illuminates the deliberate juxtaposition of contrasting elements within her photographs. Through her adept manipulation of these dichotomies, Luna invites viewers to engage in a profound reflection on the intricate layers of human emotion and experience.
 
 		//- Gallery Section 1
 		.art-detail-gallery
-			.col-img
+			.col-img(data-aos="fade-up")
 				.img-ratio(class="ratio:pt-[815_652]")
 					+PugImg("./img/banner_1.png")
-			.col-img
+			.col-img(data-aos="fade-up" data-aos-delay="200")
 				.img-ratio(class="ratio:pt-[815_652]")
 					+PugImg("./img/banner_1.png")
 
 		//- Interview Section 1
-		.art-detail-interview
+		.art-detail-interview(data-aos="fade-up")
 			.col-qa
 				h3.question To start, could you share with us where you are from and how your childhood experiences have shaped your approach to creativity and photography?
 			.col-qa
 				p.answer I was born and raised in Denmark, but I'm currently based in Sweden. I grew up in a creative home, so in a way I always knew that following that way was a possibility. I didn't see my father often, but when he came to visit from Spain, he would bring a small camera with him. I didn't give it much thought then, but after receiving his dv-tapes a few years back, I realized how it was a way for him to connect with me when language barriers and distance made it difficult. I've been reflecting a lot about this regarding my own practice, and how I myself started out using the camera to feel at ease in social situations. The camera is a machine that helps you engage with others, but it surely also hides you. I am trying to not only be observant through my camera but to also connect and be present with the person in front of the lens.
 
-		.art-detail-interview
+		.art-detail-interview(data-aos="fade-up")
 			.col-qa
 				h3.question If I understand correctly, your mother is a dancer. Could you elaborate on how her profession has influenced your fascination with body expression?
 			.col-qa
 				p.answer Yes, that is correct. I grew up with my mom practicing at home and I was often brought to practices and dance performances. In that way, looking at people using their bodies to express emotions, is something I've carried with me from my upbringing. That being said, there are many other things in life that also have sparked an interest for body expression in me.
 
-		.art-detail-interview
+		.art-detail-interview(data-aos="fade-up")
 			.col-qa
 				h3.question Fragility, whether it's emotional, physical, or cultural, often leads to moments of vulnerability but can also pave the way for rebirth and resilience. How do you explore these themes of rebirth in your shots?
 			.col-qa
 				p.answer Absolutely, I believe that vulnerability goes hand in hand with great strength. Whether it's the resilience or power from overcoming something, or the courage of showing your emotional landscape to others. For me, photography is very therapeutic. I use the medium to process and communicate an emotional state, that I otherwise can find hard to deal with. It becomes a way to grasp and transform what's accumulating on the inside and bring it to the surface. If I struggle to find inspiration for an ongoing project, or if I see it taking a different turn, it's often because I, for that time of being, have built a resilience towards the subject matter.
 
 		//- Highlight Quote
-		.art-detail-highlight
+		.art-detail-highlight(data-aos="zoom-in")
 			h2.highlight-text What inspires me most, is probably to just be #[span.italic observant] and #[span.italic present], and trying to keep a childlike #[span.italic playfulness] alive.
 
 		//- Gallery Section 2
 		.art-detail-gallery
-			.col-img
+			.col-img(data-aos="fade-up")
 				.img-ratio(class="ratio:pt-[704_520]")
 					+PugImg("./img/banner_1.png")
-			.col-img
+			.col-img(data-aos="fade-up" data-aos-delay="200")
 				.img-ratio(class="ratio:pt-[704_520]")
 					+PugImg("./img/banner_1.png")
 
 		//- Video Section (Trigger)
-		.art-detail-video
+		.art-detail-video(data-aos="fade-up")
 			.col-video
 				.img-ratio(class="ratio:pt-[360_640]")
 					+PugImg("./img/banner_1.png")
-					.play-button(data-video-src="")
+					.play-button.btn-play(data-video="https://www.w3schools.com/html/mov_bbb.mp4")
 						i.fa-solid.fa-play
 			.col-info
 				h2.video-title LUNA LOPEZ
@@ -101,8 +101,9 @@ section.art-detail-page.section-py
 					
 					.video-overlay
 						.overlay-content
-							.video-tag AZN kru
-							h2.overlay-title Barbora Mochowa – White & Black
+							.wrapper
+								.video-tag AZN kru
+								h2.overlay-title Barbora Mochowa – White & Black
 							.btn-play-popup
 								i.fa-solid.fa-play
 			

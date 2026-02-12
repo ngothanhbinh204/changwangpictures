@@ -1,5 +1,5 @@
 .btn
-	@apply cursor-pointer select-none transition-all duration-300
+	@apply cursor-pointer select-none transition-all duration-300 text-lg lg:text-xl font-consolas relative font-normal
 	&.loading
 		@apply bg-transparent #{!important}
 		span,.icon
@@ -52,4 +52,41 @@
 				path
 					stroke-width: 0
 					vector-effect: non-scaling-stroke
+	&.btn-arrow
+		@apply inline-flex items-center gap-4 uppercase w-fit
+		@apply transition-all duration-500 font-consolas
+		i
+			@apply transition-all duration-500 text-base
+		&:hover
+			@apply text-Primary-1
+			i
+				@apply translate-x-3
+	&.btn-arrow-line
+		@apply inline-flex items-center gap-4 uppercase pb-2 border-b border-gray-500 font-consolas w-fit
+		@apply transition-all duration-500
+		i
+			@apply transition-all duration-500 text-base
+		&:hover
+			@apply border-Primary-1 text-Primary-1
+			i
+				@apply translate-x-3
+
+	&.btn-arrow-white
+		@apply inline-flex items-center gap-4 uppercase w-fit
+		@apply transition-all duration-500 font-consolas
+		i
+			@apply transition-all duration-500 text-base
+		&:hover
+			@apply text-white
+			i
+				@apply translate-x-3
+	&.btn-arrow-line-white
+		@apply inline-flex items-center gap-4 uppercase pb-2 border-b border-white/70 font-consolas w-fit
+		@apply transition-all duration-500
+		i
+			@apply transition-all duration-500 text-base
+		&:hover
+			@apply border-white text-white
+			i
+				@apply translate-x-3
 

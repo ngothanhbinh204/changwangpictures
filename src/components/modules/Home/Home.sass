@@ -12,7 +12,7 @@
 
 .home-intro
 	.intro-text
-		@apply max-w-[960px]
+		@apply lg:max-w-[80%]
 		.heading-2
 			@apply font-normal
 			span.italic
@@ -20,32 +20,38 @@
 
 .home-services
 	.container-text
-		// @apply max-w-[1240px]
+		@apply px-4 xl:px-6
 	.service-list
-		@apply flex flex-col gap-2
+		@apply flex flex-col
 		li
-			@apply text-4xl md:text-6xl xl:text-7xl font-black uppercase leading-none tracking-tighter
+			@apply whitespace-nowrap title-88 text-left lg:text-right font-normal font-secondary uppercase leading-[1.1]
 	.content-box
-		@apply font-primary space-y-6
-		p
-			@apply font-normal text-base lg:text-lg mb-6 leading-relaxed
-	.link-arrow
-		@apply text-sm font-bold tracking-widest border-b border-black pb-1 hover:text-black/70 transition-colors
+		@apply font-consolas flex flex-col gap-8 lg:gap-2 lg:pr-15 justify-between h-full lg:pb-4
+		.desc
+			@apply font-normal text-base lg:body-2 leading-[1.3] space-y-5
+		.btn
+			@apply mt-auto
 
 .home-connect
 	.newsletter-form
-		@apply space-y-4 flex flex-row w-full max-w-md gap-10 items-end
+		@apply space-y-4 flex flex-row w-full justify-center gap-10 lg:gap-12 xl:gap-20 items-end mx-auto
 		.wrapper-form
-			@apply w-full
 			.form-group
 				@apply w-full
 				input
-					@apply w-full pb-2 outline-none bg-transparent placeholder-black/40 text-black py-4 font-primary text-sm uppercase tracking-wide
+					@apply lg:rem:min-w-[150px] xl:rem:min-w-[250px] w-full pb-2 outline-none bg-transparent placeholder-black/40 text-black py-4 font-primary text-sm lg:text-base uppercase tracking-wide
 		button
 			@apply tracking-widest hover:gap-4 transition-all duration-300 mt-4
-			@apply flex items-center gap-2 uppercase font-bold text-sm pb-2
+			@apply flex items-center gap-2 font-bold text-sm pb-2
+		a
+			@apply pb-2
 
 .home-footer-banner
 	.footer-banner-img
 		.img-ratio
 			@apply w-full
+.wrapper-connect
+	@apply grid grid-cols-1 lg:grid-cols-2 gap-10 rem:lg:gap-[38px]
+
+.heading_1
+	@apply heading-1 uppercase mb-10 font-secondary text-Primary-1 font-normal

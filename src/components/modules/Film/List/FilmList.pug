@@ -35,10 +35,10 @@
 	]
 +SpaceToTop('space-header')
 //- Mixin for reusable film item
-mixin FilmItem(item)
-	.film-item
+mixin FilmItem(item, index)
+	.film-item(data-aos="fade-up" data-aos-delay=(index % 2) * 100)
 		.film-bg
-			.img-ratio(class="ratio:pt-[556_1440]")
+			.img-ratio(class="ratio:pt-[1200_1440] lg:ratio:pt-[556_1440]")
 				+PugImg(item.img)
 			.film-overlay
 		
@@ -54,11 +54,8 @@ mixin FilmItem(item)
 							p.producer Produced by #{item.producer}
 					
 					.action-col
-						a.btn-view-more(href="#")
-							span.text VIEW MORE
-							span.icon
-								i.fa-sharp.fa-light.fa-arrow-right-long
+						+btnArrowLineWhite("View More")
 
 section.film-list-page
-	each film in films
-		+FilmItem(film)
+	each film, index in films
+		+FilmItem(film, index)
