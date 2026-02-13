@@ -112,6 +112,7 @@ export function swiperInit() {
 	swiperProductDetail();
 	swiperFieldOp();
 	swiperWork();
+	swiperRelatedPosts();
 	swiperRelatedVideos();
 
 	const about_5 = new Swiper(`.about-5 .swiper`, {
@@ -908,5 +909,35 @@ function swiperWork() {
 				}
 			}
 		}
+	});
+}
+
+function swiperRelatedPosts() {
+	const swiperRelated = document.querySelector('.swiper-related-posts .swiper');
+	if (!swiperRelated) return;
+
+	new Swiper(swiperRelated, {
+		modules: [Navigation, Pagination, Autoplay],
+		slidesPerView: 1,
+		spaceBetween: 20,
+		speed: 1000,
+		loop: true,
+		autoplay: {
+			delay: 4000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.swiper-related-posts .swiper-pagination',
+			clickable: true,
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 2,
+			},
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+			},
+		},
 	});
 }

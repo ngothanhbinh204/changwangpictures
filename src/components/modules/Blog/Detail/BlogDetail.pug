@@ -79,19 +79,31 @@ section.blog-detail-page.section-py
 				i.fa-regular.fa-arrow-right-long
 
 section.related-posts.section-pb
-	.container
+	.container.max-w-full(data-aos="fade-up")
 		h2.section-title YOU MIGHT ALSO LIKE
-		.related-grid
-			- for(var i = 0; i < 3; i++)
-				.blog-card
-					.img-ratio(class="ratio:pt-[272_315]")
-						+PugImg("./img/banner_1.png")
-					.content
-						.category MAGAZINES
-						h3.title
-							a(href="#") A global creative studio based in Saigon, Vietnam
-						.desc
-							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						a.btn-view-more(href="#")
-							span VIEW MORE
-							i.fa-regular.fa-arrow-right-long
+		.swiper-related-posts
+			.swiper
+				.swiper-wrapper
+					- 
+						var relatedList = [
+							{ category: 'MAGAZINES', title: 'A global creative studio based in Saigon, Vietnam', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', img: './img/banner_1.png' },
+							{ category: 'BLOGS', title: 'Innovative Design Trends for 2026', desc: 'Exploring the future of visual communication and minimalist aesthetics.', img: './img/banner_1.png' },
+							{ category: 'MAGAZINES', title: 'The Art of Cinematography', desc: 'Step behind the lens to discover how lighting and composition tell stories.', img: './img/banner_1.png' },
+							{ category: 'BLOGS', title: 'Studio Life: Behind the Scenes', desc: 'Discover our daily rituals and tools that keep the creative gears turning.', img: './img/banner_1.png' },
+							{ category: 'MAGAZINES', title: 'Creative Collaboration in the Digital Age', desc: 'How remote teams are reshaping the landscape of global design.', img: './img/banner_1.png' }
+						]
+					each item in relatedList
+						.swiper-slide
+							.blog-card
+								.img-ratio(class="ratio:pt-[272_315]")
+									+PugImg(item.img)
+								.content
+									.category= item.category
+									h3.title
+										a(href="./BlogDetail.html")= item.title
+									.desc
+										p= item.desc
+									a.btn-view-more(href="./BlogDetail.html")
+										span VIEW MORE
+										i.fa-regular.fa-arrow-right-long
+			.swiper-pagination
