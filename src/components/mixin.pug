@@ -220,23 +220,23 @@ mixin ButtonPrimary(text="")
 	a(href="#" class='btn-primary btn ' + attributes.class)
 		span=text
 
-mixin btnArrow(text="SEE MORE")
-	a.btn.btn-arrow(href="#")&attributes(attributes)
+mixin btnArrow(text="SEE MORE", url="#")
+	a.btn.btn-arrow(href=url)&attributes(attributes)
 		span=text
 		i.fa-regular.fa-arrow-right-long
 
-mixin btnArrowWhite(text="SEE MORE")
-	a.btn.btn-arrow-white(href="#")&attributes(attributes)
+mixin btnArrowWhite(text="SEE MORE", url="#")
+	a.btn.btn-arrow-white(href=url)&attributes(attributes)
 		span=text
 		i.fa-regular.fa-arrow-right-long
 
-mixin btnArrowLine(text="CONTACT")
-	a.btn.btn-arrow-line(href="#")&attributes(attributes)
+mixin btnArrowLine(text="CONTACT", url="#")
+	a.btn.btn-arrow-line(href=url)&attributes(attributes)
 		span=text
 		i.fa-regular.fa-arrow-right-long
 		
-mixin btnArrowLineWhite(text="CONTACT")
-	a.btn.btn-arrow-line-white(href="#")&attributes(attributes)
+mixin btnArrowLineWhite(text="CONTACT", url="#")
+	a.btn.btn-arrow-line-white(href=url)&attributes(attributes)
 		span=text
 		i.fa-regular.fa-arrow-right-long
 		

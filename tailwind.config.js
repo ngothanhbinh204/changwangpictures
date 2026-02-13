@@ -601,7 +601,7 @@ module.exports = {
 				".title-68": {
 					fontWeight: "600",
 					lineHeight: "1.25",
-					fontSize: "calc(40/1440*100rem)", 
+					fontSize: "calc(26/1440*100rem)", 
 					[`@media (min-width: ${theme("screens.md")})`]: {
 						fontSize: "calc(52/1440*100rem)",
 					},
@@ -612,7 +612,7 @@ module.exports = {
 				".title-48": {
 					fontWeight: "600",
 					lineHeight: "1.25",
-					fontSize: "calc(32/1440*100rem)", 
+					fontSize: "calc(24/1440*100rem)", 
 					[`@media (min-width: ${theme("screens.md")})`]: {
 						fontSize: "calc(42/1440*100rem)",
 					},
@@ -623,7 +623,7 @@ module.exports = {
 				".title-42": {
 					fontWeight: "600",
 					lineHeight: "1.25",
-					fontSize: "calc(28/1440*100rem)", 
+					fontSize: "calc(26/1440*100rem)", 
 					[`@media (min-width: ${theme("screens.md")})`]: {
 						fontSize: "calc(36/1440*100rem)",
 					},
@@ -634,7 +634,7 @@ module.exports = {
 				".title-40": {
 					fontWeight: "600",
 					lineHeight: "1.25",
-					fontSize: "calc(24/1440*100rem)", 
+					fontSize: "calc(20/1440*100rem)", 
 					[`@media (min-width: ${theme("screens.md")})`]: {
 						fontSize: "calc(32/1440*100rem)",
 					},

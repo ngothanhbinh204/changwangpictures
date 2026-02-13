@@ -1,5 +1,5 @@
 .btn
-	@apply cursor-pointer select-none transition-all duration-300 text-lg lg:text-xl font-consolas relative font-normal
+	@apply cursor-pointer select-none transition-all duration-300 text-[16px] rem:lg:text-[20px] font-consolas relative font-normal
 	&.loading
 		@apply bg-transparent #{!important}
 		span,.icon
@@ -41,7 +41,7 @@
 						@apply fill-white
 						stroke-width: 0
 		span
-			@apply rem:text-[16px] font-semibold text-Primary-1 uppercase
+			@apply rem:text-[14px] font-semibold text-Primary-1 uppercase
 			@apply transition-all duration-300
 		.icon
 			@apply rem:w-[30px] flex items-center
@@ -56,7 +56,7 @@
 		@apply inline-flex items-center gap-4 uppercase w-fit
 		@apply transition-all duration-500 font-consolas
 		i
-			@apply transition-all duration-500 text-base
+			@apply transition-all duration-500 rem:text-[16px]
 		&:hover
 			@apply text-Primary-1
 			i
@@ -65,7 +65,7 @@
 		@apply inline-flex items-center gap-4 uppercase pb-2 border-b border-gray-500 font-consolas w-fit
 		@apply transition-all duration-500
 		i
-			@apply transition-all duration-500 text-base
+			@apply transition-all duration-500 rem:text-[16px]
 		&:hover
 			@apply border-Primary-1 text-Primary-1
 			i
@@ -75,7 +75,7 @@
 		@apply inline-flex items-center gap-4 uppercase w-fit
 		@apply transition-all duration-500 font-consolas
 		i
-			@apply transition-all duration-500 text-base
+			@apply transition-all duration-500 rem:text-[16px]
 		&:hover
 			@apply text-white
 			i
@@ -84,7 +84,7 @@
 		@apply inline-flex items-center gap-4 uppercase pb-2 border-b border-white/70 font-consolas w-fit
 		@apply transition-all duration-500
 		i
-			@apply transition-all duration-500 text-base
+			@apply transition-all duration-500 rem:text-[16px]
 		&:hover
 			@apply border-white text-white
 			i

@@ -103,7 +103,5 @@ section.related-posts.section-pb
 										a(href="./BlogDetail.html")= item.title
 									.desc
 										p= item.desc
-									a.btn-view-more(href="./BlogDetail.html")
-										span VIEW MORE
-										i.fa-regular.fa-arrow-right-long
+									+btnArrow("View More", "./BlogDetail.html")
 			.swiper-pagination
